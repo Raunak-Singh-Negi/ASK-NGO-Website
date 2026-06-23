@@ -56,7 +56,7 @@ export default function Home() {
               <Link href="/get-involved?tab=donate">Donate Now</Link>
             </Button>
             <Button asChild size="lg" variant="secondary">
-              <Link href="/get-involved?tab=volunteer">Volunteer With Us</Link>
+              <Link href="/get-involved?tab=volunteer">Be a Volunteer</Link>
             </Button>
           </div>
         </div>
