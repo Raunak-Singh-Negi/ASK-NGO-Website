@@ -24,7 +24,7 @@ export default function AboutPage() {
     <div className="animate-in fade-in duration-500">
       <section className="bg-primary/10 py-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">About Ardas Samaj Kalyan</h1>
+          <h1 className="font-headline text-4xl md:text-5xl font-bold">About Ardas Samaj Kalyan Trust</h1>
           <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground">
             Learn about our roots, our mission, and the dedicated people driving our vision for a better society.
           </p>
