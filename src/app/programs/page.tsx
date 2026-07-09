@@ -76,6 +76,9 @@ const beneficiaries = [
 
 // Additional initiative-style programs provided by user
 const initiativePrograms = [
+  { id: 'core-prisoners', title: 'Skills for Prisoners', summary: 'Providing technical and soft skills to inmates for rehabilitation and successful reintegration into society.' },
+  { id: 'core-shg', title: "Women's SHG Support", summary: "Empowering women's Self-Help Groups with training and resources to foster financial independence." },
+  { id: 'core-youth', title: 'Youth Development', summary: 'Supporting and guiding the youth towards positive pathways through mentorship and skill-building programs.' },
   { id: 'covid-food', title: 'COVID Relief: Food Distribution', summary: 'Distributed essential food packets to vulnerable families during the pandemic lockdowns ensuring food security.' },
   { id: 'tree-plantation', title: 'Tree Plantation Drive', summary: 'Organized community-led plantation drives promoting environmental sustainability and awareness.' },
   { id: 'cyber-security', title: 'Cyber Security Awareness', summary: 'Workshops educating youth and community members on safe digital practices and online fraud prevention.' },
@@ -84,6 +87,7 @@ const initiativePrograms = [
   { id: 'smartphone-photography', title: 'Smartphone Photography Workshop', summary: 'Training participants to capture impactful images using mobile devices—framing, light, storytelling.' },
   { id: 'artisan-camp', title: 'Artisan Skill Camp', summary: 'Hands-on exposure to local crafts supporting creativity, self-reliance, and cultural preservation.' },
   { id: 'multispeciality-camp', title: 'बहुदेशीय शिविर (Multi-speciality Camp)', summary: 'Integrated camp offering health check-ups, counseling, and access to social welfare resources.' },
+  { id: 'drugs-cyber-awareness', title: 'Drugs and Cyber Awareness Campaign', summary: 'A joint awareness campaign to spread the message of saying yes to cyber awareness and no to drug use.' },
 ];
 
 export default function ProgramsPage() {
@@ -98,12 +102,16 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+<section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-headline text-3xl font-semibold text-center mb-8">Core Program Areas</h2>
           <Accordion type="single" collapsible className="w-full">
             {programs.map((program) => (
-              <AccordionItem key={program.id} value={program.id}>
+              <AccordionItem 
+                key={program.id} 
+                value={program.id}
+                className="mb-4 px-6 border border-primary/10 rounded-xl bg-background transition-all duration-300 ease-in-out hover:shadow-md hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.15)]"
+              >
                 <AccordionTrigger className="text-left font-headline text-xl hover:no-underline">
                   {program.title}
                 </AccordionTrigger>
@@ -223,7 +231,7 @@ export default function ProgramsPage() {
             </p>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {initiativePrograms.map(p => (
-                <Card key={p.id} className="h-full flex flex-col border-primary/20 hover:shadow-md transition-shadow">
+                <Card key={p.id} className="h-full flex flex-col bg-background border-primary/20 transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.20)] cursor-pointer">
                   <CardHeader className="pb-2">
                     <CardTitle className="font-headline text-xl leading-snug">{p.title}</CardTitle>
                   </CardHeader>
@@ -237,4 +245,4 @@ export default function ProgramsPage() {
         </section>
     </div>
   );
-}
+}Accordion

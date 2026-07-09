@@ -32,6 +32,9 @@ import { Testimonials } from "@/components/common/testimonials";
 import Link from "next/link";
 
 export default function Home() {
+  // 1. Declare the environment variable at the top of the function
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
   return (
     <div className="flex flex-col animate-in fade-in duration-500">
       <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white">
@@ -144,11 +147,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 2. Injected the adaptive basePath rules to your Testimonials array items */}
       <Testimonials
         showText={false}
         items={[
-          { id: "img-1", quote: "", name: "", imageSrc: "/images/testimonial-1.jpg" },
-          { id: "img-2", quote: "", name: "", imageSrc: "/images/testimonial-2.jpg" },
+          { id: "img-1", quote: "", name: "", imageSrc: `${basePath}/images/testimonial-1.jpg` },
+          { id: "img-2", quote: "", name: "", imageSrc: `${basePath}/images/testimonial-2.jpg` },
         ]}
       />
 
