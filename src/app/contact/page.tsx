@@ -10,15 +10,22 @@ export default function ContactPage() {
 
 
     return (
-        <div className="animate-in fade-in duration-500">
-            <section className="bg-primary/10 py-8 md:py-12">
-                <div className="container mx-auto px-4 text-center">
-                    <h1 className="font-headline text-4xl md:text-5xl font-bold">Contact Us</h1>
-                    <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground">
-                        We'd love to hear from you. Whether you have a question, a suggestion, or want to partner with us, get in touch.
-                    </p>
-                </div>
-            </section>
+        <> 
+      <section className="bg-primary/10 py-12">
+        <div className="container mx-auto px-4 text-center">
+          
+          {/* 🌟 Isolated heading shimmer added here */}
+          <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-heading-shimmer">
+           Contact Us
+          </h1>
+          
+          {/* 🌟 Staggered pure fade-in added here */}
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
+             We'd love to hear from you. Whether you have a question, a suggestion, or want to partner with us, get in touch.
+          </p>
+          
+        </div>
+      </section>
             
             <section className="py-16 md:py-24">
                 <div className="container mx-auto px-4">
@@ -79,6 +86,6 @@ export default function ContactPage() {
                     </div>
                 </div>
             </section>
-        </div>
-    )
+        </>
+    );
 }

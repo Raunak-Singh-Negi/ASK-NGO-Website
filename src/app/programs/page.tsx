@@ -1,3 +1,6 @@
+"use client"; // 🌟 ADDED: Required for useEffect and useState hooks
+
+import { useEffect, useState } from "react"; // 🌟 ADDED: React hooks
 import {
   Accordion,
   AccordionContent,
@@ -6,8 +9,11 @@ import {
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Group, HandHeart, Users } from "lucide-react";
-import type { Metadata } from "next";
 
+// 🌟 NOTE: Next.js does not allow metadata in "use client" files. 
+// If you need this SEO data, move this exact block into a `layout.tsx` file in this same directory.
+/*
+import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Programs | Ardas Samaj Kalyan NGO",
   description: "Explore core programs: prisoner rehabilitation, women's SHG empowerment, youth development, technical trainings, community initiatives, and capacity building.",
@@ -22,10 +28,11 @@ export const metadata: Metadata = {
     type: "website"
   }
 };
+*/
 
 const programs = [
   {
-    id: "prisoners",
+    id: "core-prisoners", // 🌟 FIXED: Updated to match the homepage link exactly
     title: "Skills for Prisoners: A Path to Rehabilitation",
     description: "Our rehabilitation program aims to equip inmates with valuable skills, fostering a sense of purpose and preparing them for successful reintegration into society upon release.",
     technicalSkills: ["Basic computer literacy", "Handicrafts and tailoring", "Vocational training (e.g., plumbing, electrical work)", "Gardening and agriculture"],
@@ -33,7 +40,7 @@ const programs = [
     benefits: ["Reduced recidivism rates", "Improved employment prospects post-release", "Enhanced self-esteem and mental well-being", "Positive contribution to family and community"],
   },
   {
-    id: "shg",
+    id: "core-shg", // 🌟 FIXED: Updated to match the homepage link exactly
     title: "Empowering Women's Self-Help Groups (SHG)",
     description: "We work with women's SHGs to build their capacity, promote entrepreneurship, and create sustainable livelihoods, leading to financial independence and social empowerment.",
     technicalSkills: ["Product development and quality control", "Packaging and marketing", "Bookkeeping and financial management", "Digital tools for business"],
@@ -41,7 +48,7 @@ const programs = [
     benefits: ["Increased household income and financial stability", "Greater participation in community decisions", "Enhanced social status and self-confidence", "Creation of a strong support network for women"],
   },
   {
-    id: "youth",
+    id: "core-youth", // 🌟 FIXED: Updated to match the homepage link exactly
     title: "Support and Guidance for At-Risk Youth",
     description: "This program is designed to steer youth away from negative influences by providing them with positive engagement, mentorship, and opportunities for personal and professional growth.",
     technicalSkills: ["Career counseling and goal setting", "Digital literacy and social media ethics", "Job readiness training (resume writing, interviews)", "Introduction to vocational trades"],
@@ -74,11 +81,7 @@ const beneficiaries = [
     "Provided RPL trainings with THSC"
 ];
 
-// Additional initiative-style programs provided by user
 const initiativePrograms = [
-  { id: 'core-prisoners', title: 'Skills for Prisoners', summary: 'Providing technical and soft skills to inmates for rehabilitation and successful reintegration into society.' },
-  { id: 'core-shg', title: "Women's SHG Support", summary: "Empowering women's Self-Help Groups with training and resources to foster financial independence." },
-  { id: 'core-youth', title: 'Youth Development', summary: 'Supporting and guiding the youth towards positive pathways through mentorship and skill-building programs.' },
   { id: 'covid-food', title: 'COVID Relief: Food Distribution', summary: 'Distributed essential food packets to vulnerable families during the pandemic lockdowns ensuring food security.' },
   { id: 'tree-plantation', title: 'Tree Plantation Drive', summary: 'Organized community-led plantation drives promoting environmental sustainability and awareness.' },
   { id: 'cyber-security', title: 'Cyber Security Awareness', summary: 'Workshops educating youth and community members on safe digital practices and online fraud prevention.' },
@@ -91,26 +94,60 @@ const initiativePrograms = [
 ];
 
 export default function ProgramsPage() {
+  // 🌟 ADDED: State to manage which accordion is currently open
+  const [openItem, setOpenItem] = useState<string | undefined>(undefined);
+
+  // 🌟 ADDED: Effect to catch the URL hash, open the accordion, and scroll to it smoothly
+  useEffect(() => {
+    const hash = window.location.hash;
+    
+    if (hash) {
+      const cleanId = hash.replace("#", ""); 
+      
+      // Force the accordion state to open if it matches an accordion ID
+      setOpenItem(cleanId);
+      
+      // Allow a brief 100ms render window, then scroll down to the element
+      setTimeout(() => {
+        const targetElement = document.getElementById(cleanId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  }, []);
+
   return (
-    <div className="animate-in fade-in duration-500">
+    <>
       <section className="bg-primary/10 py-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">Our Programs</h1>
-          <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground">
+          <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-heading-shimmer">
+            Our Programs
+          </h1>
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
             We believe in creating targeted, impactful programs that address the specific needs of the communities we serve.
           </p>
         </div>
       </section>
 
-<section className="py-16 md:py-24">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-headline text-3xl font-semibold text-center mb-8">Core Program Areas</h2>
-          <Accordion type="single" collapsible className="w-full">
+          
+          {/* 🌟 ADDED: Bound the value and onValueChange to our new state variables */}
+          <Accordion 
+            type="single" 
+            collapsible 
+            className="w-full"
+            value={openItem}
+            onValueChange={setOpenItem}
+          >
             {programs.map((program) => (
               <AccordionItem 
                 key={program.id} 
+                id={program.id} // 🌟 ADDED: ID so the browser can scroll to it
                 value={program.id}
-                className="mb-4 px-6 border border-primary/10 rounded-xl bg-background transition-all duration-300 ease-in-out hover:shadow-md hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.15)]"
+                className="mb-4 px-6 border border-primary/10 rounded-xl bg-background transition-all duration-300 ease-in-out hover:shadow-md hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.15)] target:shadow-lg target:bg-gradient-to-br target:from-background target:to-[rgba(249,138,20,0.20)] target:border-primary/50"
               >
                 <AccordionTrigger className="text-left font-headline text-xl hover:no-underline">
                   {program.title}
@@ -223,26 +260,31 @@ export default function ProgramsPage() {
         </div>
        </section>
 
-  <section id="community-initiatives" className="py-16 md:py-24 bg-primary/5">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="font-headline text-3xl font-semibold text-center mb-4">Community & Special Initiatives</h2>
-            <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-12">
-              Alongside our core programs we regularly conduct targeted initiatives responding to emerging needs, seasonal opportunities, and holistic community upliftment.
-            </p>
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {initiativePrograms.map(p => (
-                <Card key={p.id} className="h-full flex flex-col bg-background border-primary/20 transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.20)] cursor-pointer">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="font-headline text-xl leading-snug">{p.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-muted-foreground text-sm leading-relaxed">
-                    {p.summary}
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+      <section id="community-initiatives" className="py-16 md:py-24 bg-primary/5">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="font-headline text-3xl font-semibold text-center mb-4">Community & Special Initiatives</h2>
+          <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-12">
+            Alongside our core programs we regularly conduct targeted initiatives responding to emerging needs, seasonal opportunities, and holistic community upliftment.
+          </p>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {initiativePrograms.map(p => (
+              <Card 
+                key={p.id} 
+                id={p.id} // 🌟 ADDED: ID so teleporting works for these cards too!
+                // 🌟 ADDED: target modifier classes so the card glows beautifully when jumped to
+                className="h-full flex flex-col bg-background border-primary/20 transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.20)] cursor-pointer target:scale-[1.03] target:shadow-lg target:bg-gradient-to-br target:from-background target:to-[rgba(249,138,20,0.20)] target:border-primary/50"
+              >
+                <CardHeader className="pb-2">
+                  <CardTitle className="font-headline text-xl leading-snug">{p.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="text-muted-foreground text-sm leading-relaxed">
+                  {p.summary}
+                </CardContent>
+              </Card>
+            ))}
           </div>
-        </section>
-    </div>
+        </div>
+      </section>
+    </>
   );
-}Accordion
+}

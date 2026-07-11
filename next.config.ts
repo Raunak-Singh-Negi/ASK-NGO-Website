@@ -1,10 +1,7 @@
 import type { NextConfig } from 'next';
 
-const isProd = process.env.NODE_ENV === 'production';
-
 const nextConfig: NextConfig = {
-  // Only set assetPrefix in production so local dev uses default localhost paths
-  assetPrefix: isProd ? 'https://asktrust.in' : undefined,
+  // Removed assetPrefix to ensure relative paths work natively across all environments
   typescript: {
     ignoreBuildErrors: true,
   },

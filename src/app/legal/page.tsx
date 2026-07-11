@@ -8,7 +8,6 @@ const legalInfo = [
             { label: "Registered under", value: "Indian Trusts Act, 1882" },
             { label: "Registration Number", value: "IV-040300188" },
             { label: "Date of Registration", value: "August 24, 2021" },
-            { label: "12A Registration Number", value: "AAHTA4244RE20221" },
             { label: "Date of 12A Registration", value: "16-04-2022" },
         ],
     },
@@ -46,15 +45,23 @@ const legalInfo = [
 
 export default function LegalPage() {
     return (
-        <div className="animate-in fade-in duration-500">
-            <section className="bg-primary/10 py-12">
-                <div className="container mx-auto px-4 text-center">
-                    <h1 className="font-headline text-4xl md:text-5xl font-bold">Legal &amp; Tax Information</h1>
-                    <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground">
-                        We are committed to maintaining complete transparency in our operations. Here are our legal and tax credentials.
-                    </p>
-                </div>
-            </section>
+        <>
+        {/* 🌟 Old div animation wrapper stripped and replaced with a clean Fragment */}
+      <section className="bg-primary/10 py-12">
+        <div className="container mx-auto px-4 text-center">
+          
+          {/* 🌟 Isolated heading shimmer added here */}
+          <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-heading-shimmer">
+            Legal &amp; Tax Information
+          </h1>
+          
+          {/* 🌟 Staggered pure fade-in added here */}
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
+            We are committed to maintaining complete transparency in our operations. Here are our legal and tax credentials.
+          </p>
+          
+        </div>
+      </section>
             
             <section className="py-16 md:py-24">
                 <div className="container mx-auto px-4 max-w-4xl">
@@ -85,6 +92,7 @@ export default function LegalPage() {
                     </div>
                 </div>
             </section>
-        </div>
-    )
+       
+        </>
+    );
 }
