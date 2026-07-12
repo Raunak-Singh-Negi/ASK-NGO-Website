@@ -98,33 +98,42 @@ export default function ProgramsPage() {
   const [openItem, setOpenItem] = useState<string | undefined>(undefined);
 
   // 🌟 ADDED: Effect to catch the URL hash, open the accordion, and scroll to it smoothly
-  useEffect(() => {
+useEffect(() => {
     const hash = window.location.hash;
     
     if (hash) {
       const cleanId = hash.replace("#", ""); 
       
-      // Force the accordion state to open if it matches an accordion ID
       setOpenItem(cleanId);
       
-      // Allow a brief 100ms render window, then scroll down to the element
       setTimeout(() => {
         const targetElement = document.getElementById(cleanId);
+        
         if (targetElement) {
-          targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+          // 1. Find where the card is physically located on the screen
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          
+          // 2. Add the current page scroll depth, and SUBTRACT 120 pixels for your navbar buffer
+          const offsetPosition = elementPosition + window.scrollY - 80;
+          
+          // 3. Command the window to scroll to this exact coordinate
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
         }
-      }, 100);
+      }, 300);
     }
   }, []);
 
   return (
     <>
-      <section className="bg-primary/10 py-12">
+      <section className="bg-[hsl(20,85%,65%)] py-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-heading-shimmer">
             Our Programs
           </h1>
-          <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
             We believe in creating targeted, impactful programs that address the specific needs of the communities we serve.
           </p>
         </div>
@@ -272,7 +281,7 @@ export default function ProgramsPage() {
                 key={p.id} 
                 id={p.id} // 🌟 ADDED: ID so teleporting works for these cards too!
                 // 🌟 ADDED: target modifier classes so the card glows beautifully when jumped to
-                className="h-full flex flex-col bg-background border-primary/20 transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.20)] cursor-pointer target:scale-[1.03] target:shadow-lg target:bg-gradient-to-br target:from-background target:to-[rgba(249,138,20,0.20)] target:border-primary/50"
+                className="h-full flex flex-col scroll-mt-32 bg-background border-primary/20 transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.20)] cursor-pointer target:scale-[1.03] target:shadow-lg target:bg-gradient-to-br target:from-background target:to-[rgba(249,138,20,0.20)] target:border-primary/50"
               >
                 <CardHeader className="pb-2">
                   <CardTitle className="font-headline text-xl leading-snug">{p.title}</CardTitle>

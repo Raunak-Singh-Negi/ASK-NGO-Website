@@ -11,7 +11,7 @@ export default function ContactPage() {
 
     return (
         <> 
-      <section className="bg-primary/10 py-12">
+      <section className="bg-[hsl(20,85%,65%)] py-12">
         <div className="container mx-auto px-4 text-center">
           
           {/* 🌟 Isolated heading shimmer added here */}
@@ -20,7 +20,7 @@ export default function ContactPage() {
           </h1>
           
           {/* 🌟 Staggered pure fade-in added here */}
-          <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
              We'd love to hear from you. Whether you have a question, a suggestion, or want to partner with us, get in touch.
           </p>
           

@@ -17,21 +17,21 @@ export default function AboutPage() {
       imageUrl: `${basePath}/images/NGO_founder.jpeg`
     },
     {
-      name: "Guardian's Message",
+      name: "Mr. George Ivan Gregory Mann",
       role: "Guardian & Advisor",
       message: "Ever since its inception, the Ex-students of Carman School along with Mr. and Mrs. Rajveer Singh have been taking up various tasks by which society in general and the poor and needy in particular have benefitted. We at ASK are extremely grateful to God and to the many people in this State who have come forward to help us achieve the goals we have set from time to time. Thank you and may God Bless us all.",
-      imageUrl: "https://placehold.co/100x100.png"
+      imageUrl: `${basePath}/images/Guardian Ask.jpeg`
     },
   ];
 
   return (
     <>
-      <section className="bg-primary/10 py-12">
+      <section className="bg-[hsl(20,85%,65%)] py-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-heading-shimmer">
             About Ardas Samaj Kalyan Trust
           </h1>
-          <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
             Learn about our roots, our mission, and the dedicated people driving our vision for a better society.
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-8 text-center">
             
             {/* 1. MISSION CARD */}
-            <Card className="bg-background transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.20)]">
+            <Card className="bg-card text-card-foreground border transition-all duration-300 hover:bg-neutral-950 hover:text-white hover:scale-[1.03] hover:shadow-xl">
               <CardHeader>
                 <HeartHandshake className="h-10 w-10 mx-auto text-primary"/>
                 <CardTitle className="font-headline mt-2">Our Mission</CardTitle>
@@ -80,7 +80,7 @@ export default function AboutPage() {
             </Card>
              
             {/* 2. VISION CARD */}
-            <Card className="bg-background transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.20)]">
+            <Card className="bg-card transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.20)]">
               <CardHeader>
                 <Eye className="h-10 w-10 mx-auto text-primary"/>
                 <CardTitle className="font-headline mt-2">Our Vision</CardTitle>
@@ -91,7 +91,7 @@ export default function AboutPage() {
             </Card>
              
             {/* 3. GOALS CARD */}
-            <Card className="bg-background transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.20)]">
+            <Card className="bg-card transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.20)]">
               <CardHeader>
                 <Goal className="h-10 w-10 mx-auto text-primary"/>
                 <CardTitle className="font-headline mt-2">Our Goals</CardTitle>

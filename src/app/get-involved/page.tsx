@@ -8,7 +8,7 @@ export default function GetInvolvedPage() {
     <>
   
 {/* 🌟 Old div animation wrapper stripped and replaced with a clean Fragment */}
-      <section className="bg-primary/10 py-12">
+      <section className="bg-[hsl(20,85%,65%)] py-12">
         <div className="container mx-auto px-4 text-center">
           
           {/* 🌟 Isolated heading shimmer added here */}
@@ -17,7 +17,7 @@ export default function GetInvolvedPage() {
           </h1>
           
           {/* 🌟 Staggered pure fade-in added here */}
-          <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
          Your support is crucial to our mission. Discover the different ways you can contribute and make a real impact.
           </p>
           
