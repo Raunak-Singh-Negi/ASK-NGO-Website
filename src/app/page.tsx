@@ -3,7 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpenText, Handshake, HeartHandshake, Users } from "lucide-react";
 import type { Metadata } from "next";
 
+// 🌟 1. Create dynamic variables so the code adapts to where it is hosted
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://asktrust.in";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+// 🌟 2. The upgraded metadata object
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Ardas Samaj Kalyan NGO | Empowering Communities",
   description: "Official website of Ardas Samaj Kalyan NGO: skill development, prisoner rehabilitation, women's SHG empowerment, youth development, community initiatives.",
   keywords: [
@@ -12,10 +18,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ardas Samaj Kalyan NGO",
     description: "Empowering communities through education, skills, and social upliftment.",
-    url: "https://asktrust.in/",
+    url: `${siteUrl}${basePath}`,
     siteName: "ASK Trust",
     images: [
-      { url: "/images/home1.png", width: 1200, height: 630, alt: "Ardas Samaj Kalyan Hero" }
+      { 
+        // 🎯 Dynamically builds the absolute URL for link sharing previews
+        url: `${siteUrl}${basePath}/images/home1.png`, 
+        width: 1200, 
+        height: 630, 
+        alt: "Ardas Samaj Kalyan Hero" 
+      }
     ],
     locale: "en_IN",
     type: "website"
@@ -24,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ardas Samaj Kalyan NGO",
     description: "Empowering communities through education, skills, and social upliftment.",
-    images: ["/images/home1.png"],
+    images: [`${siteUrl}${basePath}/images/home1.png`],
   },
 };
 import Image from "next/image";
@@ -39,7 +51,7 @@ export default function Home() {
     <>
     <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white">
         <Image
-          src="/images/home1.png"
+          src={`${basePath}/images/home1.png`}
           alt="Community members working together"
           fill
           priority
