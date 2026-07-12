@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Group, HandHeart, Users } from "lucide-react";
-
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 // 🌟 NOTE: Next.js does not allow metadata in "use client" files. 
 // If you need this SEO data, move this exact block into a `layout.tsx` file in this same directory.
 /*

@@ -43,7 +43,7 @@ export default function AboutPage() {
             <div>
               {/* Next.js automatically maps the root '/' to your public folder */}
               <Image 
-                src="/images/designed_by_raunak.png" 
+                src={`${basePath}/images/designed_by_raunak.png`}
                 alt="NGO team working" 
                 width={600} 
                 height={400} 
