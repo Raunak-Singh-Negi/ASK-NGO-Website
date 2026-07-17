@@ -233,7 +233,7 @@ export default function Home() {
 <section id="get-involved" className="py-16 md:py-24 relative overflow-hidden">
         <div className="container mx-auto px-4 text-center relative">
           
-        {/* 🌟 LEFT: Floating Instagram Button */}
+          {/* 🌟 DESKTOP LEFT: Floating Instagram Button (Hidden on Mobile) */}
           <a 
             href="https://www.instagram.com/asktrust/" 
             target="_blank" 
@@ -248,7 +248,7 @@ export default function Home() {
             
             {/* The Icon Wrapper (Increased to p-5 for a bigger circle) */}
             <div className="p-5 rounded-full bg-background border-2 shadow-lg group-hover:bg-gradient-to-tr group-hover:from-[#f09433] group-hover:via-[#e6683c] group-hover:to-[#bc1888] group-hover:text-white group-hover:border-transparent transition-all duration-900 hover:scale-110">
-              {/* Icon increased to w-10 h-10 */}
+              {/* Icon increased to w-40 h-40 */}
               <Instagram className="w-40 h-40 transition-colors" />
             </div>
 
@@ -258,7 +258,7 @@ export default function Home() {
             </span>
           </a>
 
-          {/* 🌟 RIGHT: Floating LinkedIn Button */}
+          {/* 🌟 DESKTOP RIGHT: Floating LinkedIn Button (Hidden on Mobile) */}
           <a 
             href="https://www.linkedin.com/company/ardas-samaj-kalyan-trust/" 
             target="_blank" 
@@ -273,7 +273,7 @@ export default function Home() {
             
             {/* The Icon Wrapper (Increased to p-5 for a bigger circle) */}
             <div className="p-5 rounded-full bg-background border-2 shadow-lg group-hover:bg-[#0A66C2] group-hover:text-white group-hover:border-transparent transition-all duration-900 hover:scale-110">
-              {/* Icon increased to w-10 h-10 */}
+              {/* Icon increased to w-40 h-40 */}
               <Linkedin className="w-40 h-40 transition-colors" />
             </div>
 
@@ -283,14 +283,16 @@ export default function Home() {
             </span>
           </a>
 
-          {/* 🌟 CENTER: Your Original Content */}
+          {/* 🌟 CENTER: Your Original Content with Responsive Text */}
           <h2 className="font-headline text-3xl md:text-4xl font-semibold">Join Us in Making a Difference</h2>
-            <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-                 Your support can change lives. Whether you donate, volunteer, or partner with us, you become a vital part of our mission.
-                 <span className="block mt-3 text-xl font-semibold text-[hsl(20,85%,40%)]">
-                      Stay updated on our journey! Follow our social media handles by clicking the icons on the sides.
-                 </span>
-            </p>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+            Your support can change lives. Whether you donate, volunteer, or partner with us, you become a vital part of our mission.
+            
+            {/* 🔥 MAGIC TEXT: Changes based on screen size! */}
+            <span className="block mt-3 text-xl font-semibold text-[hsl(20,85%,40%)]">
+              Stay updated on our journey! Follow our social media handles by clicking the icons <span className="hidden md:inline">on the sides</span><span className="inline md:hidden">below</span>.
+            </span>
+          </p>
           <div className="mt-8 flex justify-center items-center gap-8">
              <div className="text-center">
                 <HeartHandshake className="h-12 w-12 text-primary mx-auto"/>
@@ -312,6 +314,24 @@ export default function Home() {
                 <Link href="/get-involved">Join Us Today</Link>
              </Button>
            </div>
+
+           {/* 🌟 MOBILE ONLY ROW: Upscaled ~3x (w-24 h-24), using duration-900 to match your theme */}
+           <div className="flex md:hidden justify-center items-center gap-8 mt-16 pt-8 border-t border-border/50 relative z-30">
+              <a href="https://www.instagram.com/asktrust/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group">
+                <div className="p-6 rounded-full bg-background border-2 shadow-md group-hover:bg-gradient-to-tr group-hover:from-[#f09433] group-hover:via-[#e6683c] group-hover:to-[#bc1888] group-hover:text-white transition-all duration-900 active:scale-95">
+                  <Instagram className="w-24 h-24 transition-colors" />
+                </div>
+                <span className="text-base font-bold text-muted-foreground">Instagram</span>
+              </a>
+
+              <a href="https://www.linkedin.com/company/ardas-samaj-kalyan-trust/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group">
+                <div className="p-6 rounded-full bg-background border-2 shadow-md group-hover:bg-[#0A66C2] group-hover:text-white transition-all duration-900 active:scale-95">
+                  <Linkedin className="w-24 h-24 transition-colors" />
+                </div>
+                <span className="text-base font-bold text-muted-foreground">LinkedIn</span>
+              </a>
+           </div>
+
         </div> 
       </section>
    

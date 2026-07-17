@@ -74,22 +74,35 @@ const NavLink = ({ href, label, className }: { href: string; label: string, clas
             </SheetTrigger>
             <SheetContent side="right">
               <div className="p-4">
-                 <div className="mb-6">
-             <Link href="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2">
-               <Image src="/logo.png" alt="Ardas Samaj Kalyan Logo" width={120} height={40} className="h-10 w-auto object-contain" priority/>
-                      <span className="ml-2 text-xs font-semibold text-foreground">
-                        ARDAS SAMAJ KALYAN
-                      </span>
-                    </Link>
+                
+                {/* 🎯 FIX 1: Updated the image path to use basePath and point to the correct images folder */}
+                <div className="mb-6">
+                  <Link href="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2">
+                    <Image src={`${basePath}/images/logo.png`} alt="Ardas Samaj Kalyan Logo" width={120} height={40} className="h-10 w-auto object-contain" priority/>
+                    <span className="ml-2 text-xs font-semibold text-foreground">
+                      ARDAS SAMAJ KALYAN
+                    </span>
+                  </Link>
                 </div>
+                
                 <nav className="flex flex-col gap-6">
+                  {/* Your sliding underline NavLinks will load perfectly here */}
                   {navLinks.map((link) => (
                     <NavLink key={link.href} {...link} className="text-xl"/>
                   ))}
-                  <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 mt-4">
-                    <Link href="/get-involved" onClick={() => setIsMenuOpen(false)}>Get Involved</Link>
+                  
+                  {/* 🎯 FIX 2: Applied the exact same hover animation string from the desktop button, plus mt-4 for spacing */}
+                  <Button 
+                    asChild 
+                    size="lg" 
+                    className="mt-4 relative overflow-hidden font-bold border-2 border-[#111111] text-[hsl(20,85%,49%)] bg-[#111111] transition-colors duration-300 before:absolute before:inset-0 before:-translate-x-full before:bg-[hsl(20,85%,49%)] before:transition-transform before:duration-300 hover:text-[#111111] hover:before:translate-x-0 before:z-[-1] z-10"
+                  >
+                    <Link href="/get-involved" onClick={() => setIsMenuOpen(false)}>
+                      Get Involved
+                    </Link>
                   </Button>
                 </nav>
+                
               </div>
             </SheetContent>
           </Sheet>
