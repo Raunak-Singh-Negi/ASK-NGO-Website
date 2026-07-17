@@ -21,15 +21,20 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const NavLink = ({ href, label, className }: { href: string; label: string, className?: string }) => {
+const NavLink = ({ href, label, className }: { href: string; label: string, className?: string }) => {
     const isActive = pathname === href;
     return (
       <Link
         href={href}
         onClick={() => setIsMenuOpen(false)}
         className={cn(
-          "text-md font-medium transition-colors hover:text-primary",
-          isActive ? "text-primary" : "text-muted-foreground",
+          "relative text-md font-medium transition-colors duration-300",
+          /* Turns text orange on hover */
+          "hover:text-[hsl(20,85%,49%)]",
+          /* The sliding underline magic */
+          "after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[hsl(20,85%,49%)] after:transition-all after:duration-300 hover:after:w-full",
+          /* Keeps the text orange and the line drawn if it's the active page */
+          isActive ? "text-[hsl(20,85%,49%)] after:w-full" : "text-muted-foreground",
           className
         )}
       >
@@ -52,9 +57,11 @@ export function Header() {
           {navLinks.map((link) => (
             <NavLink key={link.href} {...link} />
           ))}
-          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/get-involved">Get Involved</Link>
-          </Button>
+         <Button 
+                asChild
+                className="relative overflow-hidden font-bold border-2 border-[#111111] text-[hsl(20,85%,49%)] bg-[#111111] transition-colors duration-300 before:absolute before:inset-0 before:-translate-x-full before:bg-[hsl(20,85%,49%)] before:transition-transform before:duration-300 hover:text-[#111111] hover:before:translate-x-0 before:z-[-1] z-10">
+                <Link href="/get-involved">Get Involved</Link>
+         </Button>
         </nav>
 
         <div className="md:hidden">

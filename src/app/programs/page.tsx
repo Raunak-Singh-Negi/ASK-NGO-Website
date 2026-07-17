@@ -130,10 +130,10 @@ useEffect(() => {
     <>
       <section className="bg-[hsl(20,85%,65%)] py-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-heading-shimmer">
+          <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-slide-up">
             Our Programs
           </h1>
-          <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-reveal [animation-delay:420ms]">
             We believe in creating targeted, impactful programs that address the specific needs of the communities we serve.
           </p>
         </div>

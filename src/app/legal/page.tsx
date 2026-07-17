@@ -51,12 +51,12 @@ export default function LegalPage() {
         <div className="container mx-auto px-4 text-center">
           
           {/* 🌟 Isolated heading shimmer added here */}
-          <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-heading-shimmer">
+          <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-slide-up">
             Legal &amp; Tax Information
           </h1>
           
           {/* 🌟 Staggered pure fade-in added here */}
-          <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-reveal  [animation-delay:420ms]">
             We are committed to maintaining complete transparency in our operations. Here are our legal and tax credentials.
           </p>
           

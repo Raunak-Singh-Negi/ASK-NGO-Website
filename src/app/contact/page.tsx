@@ -15,12 +15,12 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 text-center">
           
           {/* 🌟 Isolated heading shimmer added here */}
-          <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-heading-shimmer">
+          <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-slide-up">
            Contact Us
           </h1>
           
           {/* 🌟 Staggered pure fade-in added here */}
-          <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-reveal  [animation-delay:420ms]">
              We'd love to hear from you. Whether you have a question, a suggestion, or want to partner with us, get in touch.
           </p>
           

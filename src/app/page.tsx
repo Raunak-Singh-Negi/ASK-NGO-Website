@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpenText, Handshake, HeartHandshake, Users } from "lucide-react";
+import { BookOpenText, Handshake, HeartHandshake, Users, Instagram, Linkedin } from "lucide-react";
 import type { Metadata } from "next";
 
 // 🌟 1. Create dynamic variables so the code adapts to where it is hosted
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
 };
 import Image from "next/image";
-import { Testimonials } from "@/components/common/testimonials";
+import { WallOfFame } from "@/components/common/wall-of-fame";
 import Link from "next/link";
 
 export default function Home() {
@@ -62,24 +62,35 @@ export default function Home() {
         <div className="z-20 p-4 max-w-4xl">
           
           {/* 🌟 1. HEADING: Smoothly shimmers into solid white */}
-          <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold !text-[hsl(20,85%,49%)] drop-shadow-lg opacity-0 animate-heading-shimmer">
+          <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold !text-[hsl(20,85%,49%)] drop-shadow-lg opacity-0 animate-pop">
             Empowering Communities, Transforming Lives
           </h1>
           
           {/* 🌟 2. PARAGRAPH: Fades in after a 200ms delay */}
-          <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto !text-white/90 drop-shadow-md opacity-0 animate-pure-fade-in [animation-delay:200ms]">
+          <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto !text-white/90 drop-shadow-md opacity-0 animate-reveal [animation-delay:580ms]">
             Ardas Samaj Kalyan is dedicated to fostering social upliftment through education, skill development, and community support.
           </p>
           
           {/* 🌟 3. BUTTONS PACK: The entire button group fades up gently together after a 400ms delay */}
-          <div className="mt-8 flex justify-center gap-4 opacity-0 animate-pure-fade-in [animation-delay:400ms]">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Link href="/get-involved?tab=donate">Donate Now</Link>
-            </Button>
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/get-involved?tab=volunteer">Be a Volunteer</Link>
-            </Button>
-          </div>
+          <div className="mt-8 flex justify-center gap-4">
+  {/* Button 1: Orange BG, Charcoal Text -> Inverts on Hover */}
+  <Button 
+    asChild 
+    size="lg" 
+    className="opacity-0 animate-spring-up [animation-delay:400ms]! transition-all duration-400 font-bold border-2 border-[hsl(20,85%,49%)] bg-[hsl(20,85%,49%)] text-[#111111] hover:bg-[#111111] hover:text-[hsl(20,85%,49%)] hover:border-[#111111] hover:scale-105 hover:shadow-xl"
+  >
+    <Link href="/get-involved?tab=donate">Donate Now</Link>
+  </Button>
+
+  {/* Button 2: Charcoal BG, Orange Text -> Inverts on Hover */}
+  <Button 
+    asChild 
+    size="lg" 
+    className="opacity-0 animate-spring-up [animation-delay:550ms]! transition-all duration-400 font-bold border-2 border-[#111111] bg-[#111111] text-[hsl(20,85%,49%)] hover:bg-[hsl(20,85%,49%)] hover:text-[#111111] hover:border-[hsl(20,85%,49%)] hover:scale-105 hover:shadow-xl"
+  >
+    <Link href="/get-involved?tab=volunteer">Be a Volunteer</Link>
+  </Button>
+</div>
           
         </div>
       </section>
@@ -180,14 +191,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. Injected the adaptive basePath rules to your Testimonials array items */}
-      <Testimonials
-        showText={false}
-        items={[
-          { id: "img-1", quote: "", name: "", imageSrc: `${basePath}/images/testimonial-1.jpg` },
-          { id: "img-2", quote: "", name: "", imageSrc: `${basePath}/images/testimonial-2.jpg` },
-        ]}
-      />
+      {/* 2. Injected the adaptive basePath rules to your Testimonials now upgraded to wall of fame array items */}
+      <WallOfFame />
 
       <section id="initiatives" className="py-12 bg-primary/5 border-y border-primary/10">
   <div className="container mx-auto px-4">
@@ -225,12 +230,67 @@ export default function Home() {
   </div>
 </section>
 
-      <section id="get-involved" className="py-16 md:py-24">
-        <div className="container mx-auto px-4 text-center">
+<section id="get-involved" className="py-16 md:py-24 relative overflow-hidden">
+        <div className="container mx-auto px-4 text-center relative">
+          
+        {/* 🌟 LEFT: Floating Instagram Button */}
+          <a 
+            href="https://www.instagram.com/asktrust/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            /* Added p-4 here to increase the invisible hover trigger area */
+            className="hidden md:flex flex-col items-center justify-center absolute left-0 lg:left-6 top-1/2 -translate-y-1/2 group z-20 gap-2 p-4"
+          >
+            {/* The Floating Tooltip (Hover only) */}
+            <span className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-bold bg-slate-900 text-white px-3 py-1.5 rounded-md shadow-lg opacity-0 transition-all duration-900 pointer-events-none group-hover:opacity-100 group-hover:-translate-y-2">
+              Click to Follow!
+            </span>
+            
+            {/* The Icon Wrapper (Increased to p-5 for a bigger circle) */}
+            <div className="p-5 rounded-full bg-background border-2 shadow-lg group-hover:bg-gradient-to-tr group-hover:from-[#f09433] group-hover:via-[#e6683c] group-hover:to-[#bc1888] group-hover:text-white group-hover:border-transparent transition-all duration-900 hover:scale-110">
+              {/* Icon increased to w-10 h-10 */}
+              <Instagram className="w-40 h-40 transition-colors" />
+            </div>
+
+            {/* Permanent text below the icon */}
+            <span className="text-sm font-bold text-muted-foreground group-hover:text-foreground transition-colors">
+              Instagram
+            </span>
+          </a>
+
+          {/* 🌟 RIGHT: Floating LinkedIn Button */}
+          <a 
+            href="https://www.linkedin.com/company/ardas-samaj-kalyan-trust/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            /* Added p-4 here to increase the invisible hover trigger area */
+            className="hidden md:flex flex-col items-center justify-center absolute right-0 lg:right-6 top-1/2 -translate-y-1/2 group z-20 gap-2 p-4"
+          >
+            {/* The Floating Tooltip (Hover only) */}
+            <span className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-bold bg-slate-900 text-white px-3 py-1.5 rounded-md shadow-lg opacity-0 transition-all duration-900 pointer-events-none group-hover:opacity-100 group-hover:-translate-y-2">
+              Let's Connect!
+            </span>
+            
+            {/* The Icon Wrapper (Increased to p-5 for a bigger circle) */}
+            <div className="p-5 rounded-full bg-background border-2 shadow-lg group-hover:bg-[#0A66C2] group-hover:text-white group-hover:border-transparent transition-all duration-900 hover:scale-110">
+              {/* Icon increased to w-10 h-10 */}
+              <Linkedin className="w-40 h-40 transition-colors" />
+            </div>
+
+            {/* Permanent text below the icon */}
+            <span className="text-sm font-bold text-muted-foreground group-hover:text-foreground transition-colors">
+              LinkedIn
+            </span>
+          </a>
+
+          {/* 🌟 CENTER: Your Original Content */}
           <h2 className="font-headline text-3xl md:text-4xl font-semibold">Join Us in Making a Difference</h2>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            Your support can change lives. Whether you donate, volunteer, or partner with us, you become a vital part of our mission.
-          </p>
+            <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+                 Your support can change lives. Whether you donate, volunteer, or partner with us, you become a vital part of our mission.
+                 <span className="block mt-3 text-xl font-semibold text-[hsl(20,85%,40%)]">
+                      Stay updated on our journey! Follow our social media handles by clicking the icons on the sides.
+                 </span>
+            </p>
           <div className="mt-8 flex justify-center items-center gap-8">
              <div className="text-center">
                 <HeartHandshake className="h-12 w-12 text-primary mx-auto"/>
@@ -243,12 +303,16 @@ export default function Home() {
                 <p className="text-muted-foreground mt-1">Collaborate with us to expand our reach.</p>
              </div>
           </div>
-           <div className="mt-10">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                 <Link href="/get-involved">Get Involved Today</Link>
-              </Button>
+          <div className="mt-10 relative z-30">
+             <Button 
+                asChild
+                size="lg"
+                className="relative overflow-hidden font-bold border-2 border-[#111111] text-[hsl(20,85%,49%)] bg-[#111111] transition-colors duration-300 before:absolute before:inset-0 before:-translate-x-full before:bg-[hsl(20,85%,49%)] before:transition-transform before:duration-300 hover:text-[#111111] hover:before:translate-x-0 before:z-[-1] z-10"
+              >
+                <Link href="/get-involved">Join Us Today</Link>
+             </Button>
            </div>
-        </div>
+        </div> 
       </section>
    
     </>

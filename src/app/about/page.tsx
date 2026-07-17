@@ -28,10 +28,10 @@ export default function AboutPage() {
     <>
       <section className="bg-[hsl(20,85%,65%)] py-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-heading-shimmer">
+          <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-slide-up">
             About Ardas Samaj Kalyan Trust
           </h1>
-          <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-pure-fade-in [animation-delay:300ms]">
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-reveal [animation-delay:420ms]">
             Learn about our roots, our mission, and the dedicated people driving our vision for a better society.
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function AboutPage() {
             </Card>
              
             {/* 2. VISION CARD */}
-            <Card className="bg-card transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.20)]">
+            <Card className="bg-card text-card-foreground border transition-all duration-300 hover:bg-neutral-950 hover:text-white hover:scale-[1.03] hover:shadow-xl">
               <CardHeader>
                 <Eye className="h-10 w-10 mx-auto text-primary"/>
                 <CardTitle className="font-headline mt-2">Our Vision</CardTitle>
@@ -91,7 +91,7 @@ export default function AboutPage() {
             </Card>
              
             {/* 3. GOALS CARD */}
-            <Card className="bg-card transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.20)]">
+            <Card className="bg-card text-card-foreground border transition-all duration-300 hover:bg-neutral-950 hover:text-white hover:scale-[1.03] hover:shadow-xl">
               <CardHeader>
                 <Goal className="h-10 w-10 mx-auto text-primary"/>
                 <CardTitle className="font-headline mt-2">Our Goals</CardTitle>
