@@ -97,7 +97,7 @@ export default function Home() {
 
       <section id="mission" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-headline text-3xl md:text-4xl font-semibold">Our Mission</h2>
+          <h2 className="font-headline text-4xl font-extrabold text-[#222222] animate-divine-pulse text-center mb-4">Our Mission</h2>
           <div className="flex justify-center">
             <div className="mt-4 h-1 w-24 bg-primary rounded-full"></div>
           </div>
@@ -109,7 +109,7 @@ export default function Home() {
 
       <section id="impact" className="py-12 md:py-20 bg-gradient-to-b from-background to-primary/5">
         <div className="container mx-auto px-4">
-          <h2 className="font-headline text-2xl md:text-3xl font-semibold text-center mb-2">Our Impact</h2>
+          <h2 className="font-headline text-4xl font-extrabold text-[#222222] animate-divine-pulse text-center mb-4">Our Impact</h2>
           <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10 text-sm md:text-base">
             Tangible outcomes created with community partners, volunteers, and beneficiaries.
           </p>
@@ -137,7 +137,7 @@ export default function Home() {
 
       <section id="programs" className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4">
-          <h2 className="font-headline text-3xl md:text-4xl font-semibold text-center">Our Core Programs</h2>
+          <h2 className="font-headline text-4xl font-extrabold text-[#222222] animate-divine-pulse text-center mb-4">Our Core Programs</h2>
           <p className="text-center mt-2 text-muted-foreground">Driving change where it matters most.</p>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
@@ -196,7 +196,7 @@ export default function Home() {
 
       <section id="initiatives" className="py-12 bg-primary/5 border-y border-primary/10">
   <div className="container mx-auto px-4">
-    <h2 className="font-headline text-2xl md:text-3xl font-semibold text-center mb-2">Community Initiatives</h2>
+    <h2 className="font-headline text-4xl font-extrabold text-[#222222] animate-divine-pulse text-center mb-4">Community Initiatives</h2>
     <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-8 text-sm md:text-base">
       From COVID food relief to tree plantation and cyber safety, we respond to real community needs with focused action.
     </p>
@@ -284,7 +284,7 @@ export default function Home() {
           </a>
 
           {/* 🌟 CENTER: Your Original Content with Responsive Text */}
-          <h2 className="font-headline text-3xl md:text-4xl font-semibold">Join Us in Making a Difference</h2>
+          <h2 className="font-headline text-4xl font-extrabold text-[#222222] animate-divine-pulse text-center mb-4">Join Us in Making a Difference</h2>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
             Your support can change lives. Whether you donate, volunteer, or partner with us, you become a vital part of our mission.
             

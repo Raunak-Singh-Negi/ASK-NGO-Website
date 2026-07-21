@@ -27,7 +27,7 @@ export function Footer() {
           </div>
           
           <div>
-            <h3 className="font-headline text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="font-headline text-2xl font-extrabold text-[#222222] animate-divine-pulse text-left -ml-[20px] mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/about" className="relative transition-colors duration-300 hover:text-[hsl(20,85%,49%)] after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[hsl(20,85%,49%)] after:transition-all after:duration-300 hover:after:w-full">
@@ -53,25 +53,32 @@ export function Footer() {
           </div>
           
           <div>
-            <h3 className="font-headline text-lg font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 mt-1 text-primary shrink-0" />
-                <span>33/4/1 Patel Nagar, Saharanpur Road, Dehradun, Uttarakhand</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-primary shrink-0" />
-                <a href="mailto:asktrust.in@gmail.com" className="transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)]">
-                  asktrust.in@gmail.com
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-primary shrink-0" />
-                <a href="tel:+917017075603" className="transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)]">
-                  +91 7017075603
-                </a>
-              </li>
-            </ul>
+            <h3 className="font-headline text-2xl font-extrabold text-[#222222] animate-divine-pulse text-left mb-4">Contact Us</h3>
+          <ul className="space-y-3 text-muted-foreground">
+  {/* 🌟 Address Line */}
+  <li className="flex items-start gap-3 transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)] cursor-pointer group">
+    <MapPin className="h-5 w-5 text-primary shrink-0 transition-colors duration-300 group-hover:text-[hsl(20,85%,49%)]" />
+    <span className="transition-colors duration-300 group-hover:text-foreground">
+      33/4/1 Patel Nagar, Saharanpur Road, Dehradun, Uttarakhand
+    </span>
+  </li>
+
+  {/* 🌟 Email Line */}
+  <li className="flex items-center gap-3 transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)] cursor-pointer group">
+    <Mail className="h-5 w-5 text-primary shrink-0 transition-colors duration-300 group-hover:text-[hsl(20,85%,49%)]" />
+    <a href="mailto:asktrust.in@gmail.com" className="transition-colors duration-300 group-hover:text-foreground">
+      asktrust.in@gmail.com
+    </a>
+  </li>
+
+  {/* 🌟 Phone Line */}
+  <li className="flex items-center gap-3 transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)] cursor-pointer group">
+    <Phone className="h-5 w-5 text-primary shrink-0 transition-colors duration-300 group-hover:text-[hsl(20,85%,49%)]" />
+    <a href="tel:+917017075603" className="transition-colors duration-300 group-hover:text-foreground">
+      +91 7017075603
+    </a>
+  </li>
+</ul>
           </div>
         </div>
         

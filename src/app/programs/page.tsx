@@ -1,6 +1,7 @@
 "use client"; // 🌟 ADDED: Required for useEffect and useState hooks
 
 import { useEffect, useState } from "react"; // 🌟 ADDED: React hooks
+import Image from "next/image"; // 🌟 ADDED: Required for the highly optimized marquee images
 import {
   Accordion,
   AccordionContent,
@@ -9,7 +10,9 @@ import {
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Group, HandHeart, Users } from "lucide-react";
+
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 // 🌟 NOTE: Next.js does not allow metadata in "use client" files. 
 // If you need this SEO data, move this exact block into a `layout.tsx` file in this same directory.
 /*
@@ -32,7 +35,7 @@ export const metadata: Metadata = {
 
 const programs = [
   {
-    id: "core-prisoners", // 🌟 FIXED: Updated to match the homepage link exactly
+    id: "core-prisoners",
     title: "Skills for Prisoners: A Path to Rehabilitation",
     description: "Our rehabilitation program aims to equip inmates with valuable skills, fostering a sense of purpose and preparing them for successful reintegration into society upon release.",
     technicalSkills: ["Basic computer literacy", "Handicrafts and tailoring", "Vocational training (e.g., plumbing, electrical work)", "Gardening and agriculture"],
@@ -40,7 +43,7 @@ const programs = [
     benefits: ["Reduced recidivism rates", "Improved employment prospects post-release", "Enhanced self-esteem and mental well-being", "Positive contribution to family and community"],
   },
   {
-    id: "core-shg", // 🌟 FIXED: Updated to match the homepage link exactly
+    id: "core-shg",
     title: "Empowering Women's Self-Help Groups (SHG)",
     description: "We work with women's SHGs to build their capacity, promote entrepreneurship, and create sustainable livelihoods, leading to financial independence and social empowerment.",
     technicalSkills: ["Product development and quality control", "Packaging and marketing", "Bookkeeping and financial management", "Digital tools for business"],
@@ -48,7 +51,7 @@ const programs = [
     benefits: ["Increased household income and financial stability", "Greater participation in community decisions", "Enhanced social status and self-confidence", "Creation of a strong support network for women"],
   },
   {
-    id: "core-youth", // 🌟 FIXED: Updated to match the homepage link exactly
+    id: "core-youth",
     title: "Support and Guidance for At-Risk Youth",
     description: "This program is designed to steer youth away from negative influences by providing them with positive engagement, mentorship, and opportunities for personal and professional growth.",
     technicalSkills: ["Career counseling and goal setting", "Digital literacy and social media ethics", "Job readiness training (resume writing, interviews)", "Introduction to vocational trades"],
@@ -78,7 +81,9 @@ const beneficiaries = [
     "Inmates of Bal Sampreshan Greh, Dehradun",
     "Students of Rajkiye Purv Madhamik Vidhalaya, Dehradun",
     "Women Self-Help Groups in various villages (Mithiberi, Teliwala, Rampur danda, etc.)",
-    "Provided RPL trainings with THSC"
+    "Provided RPL trainings with THSC",
+    "Digital marketing training for SHG at Sitarganj Udham Singh Nagar",
+    "Online AI workshop for Self Help Groups ( AI for Enterprenureship and Digital Growth) "
 ];
 
 const initiativePrograms = [
@@ -91,14 +96,95 @@ const initiativePrograms = [
   { id: 'artisan-camp', title: 'Artisan Skill Camp', summary: 'Hands-on exposure to local crafts supporting creativity, self-reliance, and cultural preservation.' },
   { id: 'multispeciality-camp', title: 'बहुदेशीय शिविर (Multi-speciality Camp)', summary: 'Integrated camp offering health check-ups, counseling, and access to social welfare resources.' },
   { id: 'drugs-cyber-awareness', title: 'Drugs and Cyber Awareness Campaign', summary: 'A joint awareness campaign to spread the message of saying yes to cyber awareness and no to drug use.' },
+
+];
+
+// 🌟 ADDED: Image arrays for the 3-Tier Marquee. Add your real file names here!
+const row1 = [
+  { src: `${basePath}/images/programs-gallery/ASKGALa1.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa2.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa3.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa4.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa5.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa6.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa7.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa8.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa9.jpeg` },
+{ src: `${basePath}/images/programs-gallery/ASKGALa10.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa11.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa12.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa13.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa14.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa15.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa16.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa17.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa18.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALa19.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa20.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa21.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa22.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa23.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa24.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa25.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa26.jpeg` },
+ { src: `${basePath}/images/programs-gallery/ASKGALa27.jpeg` },
+];
+
+const row2 = [
+  { src: `${basePath}/images/programs-gallery/ASKGALb1.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb2.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb3.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb4.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb5.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb6.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb7.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb8.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb9.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb10.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb11.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb12.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb13.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb14.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb15.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb16.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb17.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb18.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb19.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb20.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALb21.jpeg` },
+];
+
+const row3 = [
+  { src: `${basePath}/images/programs-gallery/ASKGALc1.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc2.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc3.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc4.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc5.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc6.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc7.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc8.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc9.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc10.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc11.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc12.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc13.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc14.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc15.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc16.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc17.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc18.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc19.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc20.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc21.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc22.jpeg` },
+  { src: `${basePath}/images/programs-gallery/ASKGALc23.jpeg` },
+ 
 ];
 
 export default function ProgramsPage() {
-  // 🌟 ADDED: State to manage which accordion is currently open
   const [openItem, setOpenItem] = useState<string | undefined>(undefined);
-
-  // 🌟 ADDED: Effect to catch the URL hash, open the accordion, and scroll to it smoothly
-useEffect(() => {
+ const [isReady, setIsReady] = useState(false);
+  useEffect(() => {
     const hash = window.location.hash;
     
     if (hash) {
@@ -110,13 +196,9 @@ useEffect(() => {
         const targetElement = document.getElementById(cleanId);
         
         if (targetElement) {
-          // 1. Find where the card is physically located on the screen
           const elementPosition = targetElement.getBoundingClientRect().top;
-          
-          // 2. Add the current page scroll depth, and SUBTRACT 120 pixels for your navbar buffer
           const offsetPosition = elementPosition + window.scrollY - 80;
           
-          // 3. Command the window to scroll to this exact coordinate
           window.scrollTo({
             top: offsetPosition,
             behavior: "smooth"
@@ -124,7 +206,13 @@ useEffect(() => {
         }
       }, 300);
     }
+    const timer = setTimeout(() => {
+      setIsReady(true);
+    }, 1050);
+
+    return () => clearTimeout(timer);
   }, []);
+  
 
   return (
     <>
@@ -139,11 +227,47 @@ useEffect(() => {
         </div>
       </section>
 
+      {/* 🌟 NEW: 3-Tier Multi-Directional Marquee Gallery */}
+      <section className={`flex flex-col gap-4 overflow-hidden py-10 bg-secondary/30 border-y border-primary/10 transition-opacity duration-700 ${isReady ? 'opacity-100' : 'opacity-0'}`}>
+        
+        {/* ROW 1: Moves Left */}
+        <div className="flex relative w-full overflow-hidden">
+          <div className="flex animate-marquee-row1 whitespace-nowrap gap-4">
+            {row1.concat(row1).map((img, i) => (
+              <div key={`row1-${i}`} className="w-48 h-32 md:w-[282px] md:h-[188px] relative flex-shrink-0 rounded-lg overflow-hidden shadow-md">
+                <Image src={img.src} alt="NGO Program Event" fill className="object-cover" sizes="(max-width: 768px) 256px, 320px" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ROW 2: Moves Right (Opposite Direction) */}
+        <div className="flex relative w-full overflow-hidden">
+          <div className="flex animate-marquee-row2 whitespace-nowrap gap-4">
+            {row2.concat(row2).map((img, i) => (
+              <div key={`row2-${i}`} className="w-48 h-32 md:w-[282px] md:h-[188px] relative flex-shrink-0 rounded-lg overflow-hidden shadow-md">
+                <Image src={img.src} alt="NGO Program Event" fill className="object-cover" sizes="(max-width: 768px) 256px, 320px" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ROW 3: Moves Left */}
+        <div className="flex relative w-full overflow-hidden">
+          <div className="flex animate-marquee-row3 whitespace-nowrap gap-4">
+            {row3.concat(row3).map((img, i) => (
+              <div key={`row3-${i}`} className="w-48 h-32 md:w-[282px] md:h-[188px] relative flex-shrink-0 rounded-lg overflow-hidden shadow-md">
+                <Image src={img.src} alt="NGO Program Event" fill className="object-cover" sizes="(max-width: 768px) 256px, 320px" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="font-headline text-3xl font-semibold text-center mb-8">Core Program Areas</h2>
+          <h2 className="font-headline text-4xl font-extrabold text-[#222222] animate-divine-pulse text-center mb-4">Core Program Areas</h2>
           
-          {/* 🌟 ADDED: Bound the value and onValueChange to our new state variables */}
           <Accordion 
             type="single" 
             collapsible 
@@ -154,7 +278,7 @@ useEffect(() => {
             {programs.map((program) => (
               <AccordionItem 
                 key={program.id} 
-                id={program.id} // 🌟 ADDED: ID so the browser can scroll to it
+                id={program.id}
                 value={program.id}
                 className="mb-4 px-6 border border-primary/10 rounded-xl bg-background transition-all duration-300 ease-in-out hover:shadow-md hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.15)] target:shadow-lg target:bg-gradient-to-br target:from-background target:to-[rgba(249,138,20,0.20)] target:border-primary/50"
               >
@@ -209,20 +333,29 @@ useEffect(() => {
 
       <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="font-headline text-3xl font-semibold text-center mb-8">Our Skill Development Trainings</h2>
+            <h2 className="font-headline text-4xl font-extrabold text-[#222222] animate-divine-pulse text-center mb-4">Our Skill Development Trainings</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Card>
+              <Card>
                     <CardHeader>
                         <CardTitle>Technical Trainings</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <ul className="space-y-2">
                             {trainingAreas.technical.map(skill => (
-                                <li key={skill} className="flex items-start gap-2"><CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" /><span className="text-muted-foreground">{skill}</span></li>
+                                <li 
+                                  key={skill} 
+                                  className="flex items-start gap-2 transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)] cursor-pointer group"
+                                >
+                                  <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0 transition-colors duration-300 group-hover:text-[hsl(20,85%,49%)]" />
+                                  <span className="text-muted-foreground transition-colors duration-300 group-hover:text-foreground">
+                                    {skill}
+                                  </span>
+                                </li>
                             ))}
                         </ul>
                     </CardContent>
                 </Card>
+
                 <Card>
                     <CardHeader>
                         <CardTitle>Soft Skills</CardTitle>
@@ -230,19 +363,36 @@ useEffect(() => {
                     <CardContent>
                         <ul className="space-y-2">
                             {trainingAreas.softSkills.map(skill => (
-                                <li key={skill} className="flex items-start gap-2"><CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" /><span className="text-muted-foreground">{skill}</span></li>
+                                <li 
+                                  key={skill} 
+                                  className="flex items-start gap-2 transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)] cursor-pointer group"
+                                >
+                                  <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0 transition-colors duration-300 group-hover:text-[hsl(20,85%,49%)]" />
+                                  <span className="text-muted-foreground transition-colors duration-300 group-hover:text-foreground">
+                                    {skill}
+                                  </span>
+                                </li>
                             ))}
                         </ul>
                     </CardContent>
                 </Card>
+
                 <Card>
                     <CardHeader>
                         <CardTitle>Other Skills</CardTitle>
                     </CardHeader>
                     <CardContent>
-                         <ul className="space-y-2">
+                        <ul className="space-y-2">
                             {trainingAreas.others.map(skill => (
-                                <li key={skill} className="flex items-start gap-2"><CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" /><span className="text-muted-foreground">{skill}</span></li>
+                                <li 
+                                  key={skill} 
+                                  className="flex items-start gap-2 transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)] cursor-pointer group"
+                                >
+                                  <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0 transition-colors duration-300 group-hover:text-[hsl(20,85%,49%)]" />
+                                  <span className="text-muted-foreground transition-colors duration-300 group-hover:text-foreground">
+                                    {skill}
+                                  </span>
+                                </li>
                             ))}
                         </ul>
                     </CardContent>
@@ -253,14 +403,19 @@ useEffect(() => {
 
        <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="font-headline text-3xl font-semibold text-center mb-8">Our Beneficiaries</h2>
-            <Card>
+          <h2 className="font-headline text-4xl font-extrabold text-[#222222] animate-divine-pulse text-center mb-4">Our Beneficiaries</h2>
+           <Card>
                 <CardContent className="pt-6">
                     <ul className="space-y-3 columns-1 md:columns-2">
                         {beneficiaries.map((beneficiary, i) => (
-                          <li key={i} className="flex items-start gap-3">
-                            <Users className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                            <span className="text-muted-foreground">{beneficiary}</span>
+                          <li 
+                            key={i} 
+                            className="flex items-start gap-3 transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)] cursor-pointer group"
+                          >
+                            <Users className="h-5 w-5 text-primary mt-0.5 shrink-0 transition-colors duration-300 group-hover:text-[hsl(20,85%,49%)]" />
+                            <span className="text-muted-foreground transition-colors duration-300 group-hover:text-foreground">
+                              {beneficiary}
+                            </span>
                           </li>
                         ))}
                     </ul>
@@ -271,7 +426,7 @@ useEffect(() => {
 
       <section id="community-initiatives" className="py-16 md:py-24 bg-primary/5">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="font-headline text-3xl font-semibold text-center mb-4">Community & Special Initiatives</h2>
+          <h2 className="font-headline text-4xl font-extrabold text-[#222222] animate-divine-pulse text-center mb-4">Community & Special Initiatives</h2>
           <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-12">
             Alongside our core programs we regularly conduct targeted initiatives responding to emerging needs, seasonal opportunities, and holistic community upliftment.
           </p>
@@ -279,8 +434,7 @@ useEffect(() => {
             {initiativePrograms.map(p => (
               <Card 
                 key={p.id} 
-                id={p.id} // 🌟 ADDED: ID so teleporting works for these cards too!
-                // 🌟 ADDED: target modifier classes so the card glows beautifully when jumped to
+                id={p.id} 
                 className="h-full flex flex-col scroll-mt-32 bg-background border-primary/20 transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.20)] cursor-pointer target:scale-[1.03] target:shadow-lg target:bg-gradient-to-br target:from-background target:to-[rgba(249,138,20,0.20)] target:border-primary/50"
               >
                 <CardHeader className="pb-2">

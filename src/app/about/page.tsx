@@ -52,7 +52,7 @@ export default function AboutPage() {
               />
             </div>
             <div>
-              <h2 className="font-headline text-3xl font-semibold mb-4">Our Story</h2>
+              <h2 className="font-headline text-4xl font-extrabold text-[#222222] animate-divine-pulse text-center mb-4">Our Story</h2>
               <p className="text-muted-foreground mb-4">
                 Ardas Samaj Kalyan (ASK) was founded on the principles of compassion and service, with the goal of addressing deep-rooted social inequalities. Our journey started in Dehradun, driven by a desire to provide meaningful opportunities to those left behind by society—prisoners seeking a second chance, women striving for financial independence, and youth in need of guidance.
               </p>
@@ -107,7 +107,7 @@ export default function AboutPage() {
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="font-headline text-3xl md:text-4xl font-semibold text-center mb-12">Messages from Our Leadership</h2>
+          <h2 className="font-headline text-3xl font-extrabold text-[#222222] animate-divine-pulse text-center mb-4">Messages from Our Leadership</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {leadershipMessages.map((member) => (
               <Card key={member.name} className="flex flex-col items-center text-center bg-background transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg hover:bg-gradient-to-br hover:from-background hover:to-[rgba(249,138,20,0.20)]">

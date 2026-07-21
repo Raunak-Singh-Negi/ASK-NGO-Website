@@ -94,7 +94,7 @@
 }
 
 .animate-infinite-scroll {
-  animation: infinite-scroll 40s linear infinite;
+  animation: infinite-scroll 45s linear infinite;
   display: flex;
   width: max-content;
 }
@@ -247,4 +247,79 @@
   /* Accelerated to 0.5 seconds with a linear, multi-stage loop */
   animation: text-flame 1.7s infinite linear;
   display: inline-block; /* Crucial to allow the scale/skew transforms to work */
+}
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* 🏎️ ROW 1: Fast (Takes 30 seconds to loop) */
+.animate-marquee-row1 {
+  animation: scroll-left 40s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* 🐢 ROW 2: Slow & Opposite (Takes 50 seconds to loop) */
+.animate-marquee-row2 {
+  animation: scroll-right 50s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* 🚶 ROW 3: Medium (Takes 65 seconds to loop) */
+.animate-marquee-row3 {
+  animation: scroll-left 65s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* 🌟 OPTION 1: Divine Pulse (Smooth, breathing golden halo) */
+@keyframes divine-pulse {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.3), 0 0 16px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.7), 0 0 25px rgba(255, 240, 150, 0.5), 0 0 35px rgba(255, 255, 255, 0.8);
+  }
+}
+.animate-divine-pulse {
+  animation: divine-pulse 3s infinite ease-in-out;
+}
+
+/* 🌟 OPTION 2: Ethereal Shimmer (Faster, shimmering white-gold energy) */
+@keyframes ethereal-shimmer {
+  0%, 100% {
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.5), 0 0 12px rgba(255, 200, 0, 0.3);
+  }
+  33% {
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.9), 0 0 24px rgba(255, 220, 50, 0.6), 0 0 36px rgba(255, 255, 200, 0.5);
+  }
+  66% {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 18px rgba(255, 180, 0, 0.4);
+  }
+}
+.animate-ethereal-shimmer {
+  animation: ethereal-shimmer 4s infinite linear;
+}
+
+/* 🌟 OPTION 3: Holy Aura (Wide, slow, seamless blending into the background) */
+@keyframes holy-aura {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 240, 150, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 45px rgba(255, 230, 100, 0.7), 0 0 60px rgba(255, 255, 255, 0.5);
+  }
+}
+.animate-holy-aura {
+  animation: holy-aura 5s infinite ease-in-out;
 }

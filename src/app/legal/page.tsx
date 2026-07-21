@@ -67,24 +67,32 @@ export default function LegalPage() {
                 <div className="container mx-auto px-4 max-w-4xl">
                     <div className="space-y-8">
                         {legalInfo.map((section) => (
-                             <Card key={section.title}>
-                                <CardHeader>
-                                    <CardTitle className="font-headline flex items-center gap-3">
-                                        <BadgeCheck className="h-6 w-6 text-accent" />
-                                        {section.title}
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <ul className="space-y-3">
-                                        {section.details.map((item, index) => (
-                                            <li key={index} className="flex flex-col sm:flex-row">
-                                                <span className="font-semibold w-full sm:w-1/3">{item.label}:</span>
-                                                <span className="text-muted-foreground w-full sm:w-2/3">{item.value}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </CardContent>
-                             </Card>
+        <Card key={section.title}>
+    <CardHeader>
+        {/* 🌟 ADDED: Charcoal styling and animate-divine-pulse directly to CardTitle */}
+        <CardTitle className="font-headline text-3xl font-extrabold text-[#222222] animate-divine-pulse flex items-center gap-3">
+            <BadgeCheck className="h-6 w-6 text-accent shrink-0" />
+            {section.title}
+        </CardTitle>
+    </CardHeader>
+    <CardContent>
+        <ul className="space-y-3">
+            {section.details.map((item, index) => (
+                <li 
+                    key={index} 
+                    className="flex flex-col sm:flex-row transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)] cursor-pointer group"
+                >
+                    <span className="font-semibold w-full sm:w-1/3 transition-colors duration-300 group-hover:text-[hsl(20,85%,49%)]">
+                        {item.label}:
+                    </span>
+                    <span className="text-muted-foreground w-full sm:w-2/3 transition-colors duration-300 group-hover:text-foreground">
+                        {item.value}
+                    </span>
+                </li>
+            ))}
+        </ul>
+    </CardContent>
+</Card>                   
                         ))}
                     </div>
                      <div className="mt-12 text-center text-sm text-muted-foreground bg-secondary/50 p-4 rounded-md">

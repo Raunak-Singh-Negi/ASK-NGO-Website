@@ -8,7 +8,6 @@ export default function ContactPage() {
     const phone = "+91 7017075603";
     const googleMapsEmbedUrl = `https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3072.106644174089!2d78.02417057539367!3d30.31263764171911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDE4JzQ1LjgiTiA3OMKwMDEnMjguNSJF!5e1!3m2!1sen!2sin!4v1752749096046!5m2!1sen!2sin`;
 
-
     return (
         <> 
       <section className="bg-[hsl(20,85%,65%)] py-12">
@@ -32,7 +31,10 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         <Card>
                             <CardHeader>
-                                <CardTitle className="font-headline">Our Contact Information</CardTitle>
+                                {/* 🌟 ADDED: Divine pulse effect and charcoal styling to CardTitle */}
+                                <CardTitle className="font-headline text-2xl font-extrabold text-[#222222] animate-divine-pulse">
+                                    Our Contact Information
+                                </CardTitle>
                             </CardHeader>
                             <CardContent className="space-y-6">
                                 <div className="flex items-start gap-4">
@@ -41,7 +43,10 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-lg">Address</h3>
-                                        <p className="text-muted-foreground">{address}</p>
+                                        {/* 🌟 ADDED: Glowing orange light hover effect specifically to the address text */}
+                                        <p className="text-muted-foreground transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)] cursor-pointer">
+                                            {address}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -67,7 +72,10 @@ export default function ContactPage() {
                         
                         <Card className="flex flex-col">
                             <CardHeader>
-                                <CardTitle className="font-headline">Find Us on the Map</CardTitle>
+                                {/* 🌟 ADDED: Divine pulse effect and charcoal styling to CardTitle */}
+                                <CardTitle className="font-headline text-2xl font-extrabold text-[#222222] animate-divine-pulse">
+                                    Find Us on the Map
+                                </CardTitle>
                             </CardHeader>
                              <CardContent className="flex-grow flex flex-col p-0">
                                <div className="w-full flex-grow rounded-b-md overflow-hidden">

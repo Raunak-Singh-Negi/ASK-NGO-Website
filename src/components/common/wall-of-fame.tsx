@@ -27,7 +27,12 @@ const achievements = [
   { id: "donation-1", src: `${basePath}/images/fame/donation_campaign1.jpeg`, alt: "Donation Campaign" },
   { id: "headline-1", src: `${basePath}/images/fame/headline1ask.png`, alt: "ASK Headline 1" },
   { id: "headline-2", src: `${basePath}/images/fame/headline2ask.png`, alt: "ASK Headline 2" },
-  
+  { id: "headline-new1", src: `${basePath}/images/fame/ASK_new1.jpeg`, alt: "ASK Headline New 1" },
+  { id: "headline-new2", src: `${basePath}/images/fame/ASK_new2.jpeg`, alt: "ASK Headline New 2" },
+  { id: "headline-new3", src: `${basePath}/images/fame/ASK_new3.jpeg`, alt: "ASK Headline New 3" },
+  { id: "headline-new4", src: `${basePath}/images/fame/ASK_new4.jpeg`, alt: "ASK Headline New 4" },
+  { id: "headline-new5", src: `${basePath}/images/fame/ASK_new5.jpeg`, alt: "ASK Headline New 5" },
+  { id: "headline-new6", src: `${basePath}/images/fame/ASK_new6.jpeg`, alt: "ASK Headline New 6" },
   { id: "headline-3", src: `${basePath}/images/fame/headline3ask.png`, alt: "ASK Headline 3" },
   { id: "headline-4", src: `${basePath}/images/fame/headline4ask.png`, alt: "ASK Headline 4" },
   { id: "testimonial-1", src: `${basePath}/images/fame/Testimonials_1.png`, alt: "Testimonial 1" },
