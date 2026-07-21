@@ -3,11 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpenText, Handshake, HeartHandshake, Users, Instagram, Linkedin } from "lucide-react";
 import type { Metadata } from "next";
 
-// 🌟 1. Create dynamic variables so the code adapts to where it is hosted
+//Create dynamic variables so the code adapts to where it is hosted
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://asktrust.in";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-// 🌟 2. The upgraded metadata object
+//  The upgraded metadata object
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Ardas Samaj Kalyan NGO | Empowering Communities",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "ASK Trust",
     images: [
       { 
-        // 🎯 Dynamically builds the absolute URL for link sharing previews
+        //  Dynamically builds the absolute URL for link sharing previews
         url: `${siteUrl}${basePath}/images/home1.png`, 
         width: 1200, 
         height: 630, 
@@ -44,7 +44,7 @@ import { WallOfFame } from "@/components/common/wall-of-fame";
 import Link from "next/link";
 
 export default function Home() {
-  // 1. Declare the environment variable at the top of the function
+ 
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   return (
@@ -61,19 +61,18 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="z-20 p-4 max-w-4xl">
           
-          {/* 🌟 1. HEADING: Smoothly shimmers into solid white */}
           <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold !text-[hsl(20,85%,49%)] drop-shadow-lg opacity-0 animate-pop">
             Empowering Communities, Transforming Lives
           </h1>
           
-          {/* 🌟 2. PARAGRAPH: Fades in after a 200ms delay */}
+          
           <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto !text-white/90 drop-shadow-md opacity-0 animate-reveal [animation-delay:580ms]">
             Ardas Samaj Kalyan is dedicated to fostering social upliftment through education, skill development, and community support.
           </p>
           
-          {/* 🌟 3. BUTTONS PACK: The entire button group fades up gently together after a 400ms delay */}
+        
           <div className="mt-8 flex justify-center gap-4">
-  {/* Button 1: Orange BG, Charcoal Text -> Inverts on Hover */}
+ 
   <Button 
     asChild 
     size="lg" 
@@ -82,7 +81,7 @@ export default function Home() {
     <Link href="/get-involved?tab=donate">Donate Now</Link>
   </Button>
 
-  {/* Button 2: Charcoal BG, Orange Text -> Inverts on Hover */}
+ 
   <Button 
     asChild 
     size="lg" 
@@ -191,7 +190,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. Injected the adaptive basePath rules to your Testimonials now upgraded to wall of fame array items */}
       <WallOfFame />
 
       <section id="initiatives" className="py-12 bg-primary/5 border-y border-primary/10">
@@ -202,7 +200,7 @@ export default function Home() {
     </p>
     <div className="flex flex-wrap justify-center gap-3">
   {[
-    // 🎯 REMOVED the first 3 core programs. Now strictly targeting the 9 community initiatives.
+ 
     { id: 'covid-food', title: 'COVID Relief: Food Distribution' },
     { id: 'tree-plantation', title: 'Tree Plantation Drive' },
     { id: 'cyber-security', title: 'Cyber Security Awareness' },
@@ -233,7 +231,7 @@ export default function Home() {
 <section id="get-involved" className="py-16 md:py-24 relative overflow-hidden">
         <div className="container mx-auto px-4 text-center relative">
           
-          {/* 🌟 DESKTOP LEFT: Floating Instagram Button (Hidden on Mobile) */}
+          {/* DESKTOP LEFT: Floating Instagram Button (Hidden on Mobile) */}
           <a 
             href="https://www.instagram.com/asktrust/" 
             target="_blank" 
@@ -246,9 +244,9 @@ export default function Home() {
               Click to Follow!
             </span>
             
-            {/* The Icon Wrapper (Increased to p-5 for a bigger circle) */}
+            {/* The Icon Wrapper  */}
             <div className="p-5 rounded-full bg-background border-2 shadow-lg group-hover:bg-gradient-to-tr group-hover:from-[#f09433] group-hover:via-[#e6683c] group-hover:to-[#bc1888] group-hover:text-white group-hover:border-transparent transition-all duration-900 hover:scale-110">
-              {/* Icon increased to w-40 h-40 */}
+              
               <Instagram className="w-40 h-40 transition-colors" />
             </div>
 
@@ -258,12 +256,12 @@ export default function Home() {
             </span>
           </a>
 
-          {/* 🌟 DESKTOP RIGHT: Floating LinkedIn Button (Hidden on Mobile) */}
+          {/* DESKTOP RIGHT: Floating LinkedIn Button (Hidden on Mobile) */}
           <a 
             href="https://www.linkedin.com/company/ardas-samaj-kalyan-trust/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            /* Added p-4 here to increase the invisible hover trigger area */
+            
             className="hidden md:flex flex-col items-center justify-center absolute right-0 lg:right-6 top-1/2 -translate-y-1/2 group z-20 gap-2 p-4"
           >
             {/* The Floating Tooltip (Hover only) */}
@@ -271,9 +269,9 @@ export default function Home() {
               Let's Connect!
             </span>
             
-            {/* The Icon Wrapper (Increased to p-5 for a bigger circle) */}
+            {/* The Icon Wrapper  */}
             <div className="p-5 rounded-full bg-background border-2 shadow-lg group-hover:bg-[#0A66C2] group-hover:text-white group-hover:border-transparent transition-all duration-900 hover:scale-110">
-              {/* Icon increased to w-40 h-40 */}
+              
               <Linkedin className="w-40 h-40 transition-colors" />
             </div>
 
@@ -283,12 +281,12 @@ export default function Home() {
             </span>
           </a>
 
-          {/* 🌟 CENTER: Your Original Content with Responsive Text */}
+        
           <h2 className="font-headline text-4xl font-extrabold text-[#222222] animate-divine-pulse text-center mb-4">Join Us in Making a Difference</h2>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
             Your support can change lives. Whether you donate, volunteer, or partner with us, you become a vital part of our mission.
             
-            {/* 🔥 MAGIC TEXT: Changes based on screen size! */}
+            {/* Changes based on screen size */}
             <span className="block mt-3 text-xl font-semibold text-[hsl(20,85%,40%)]">
               Stay updated on our journey! Follow our social media handles by clicking the icons <span className="hidden md:inline">on the sides</span><span className="inline md:hidden">below</span>.
             </span>
@@ -315,7 +313,7 @@ export default function Home() {
              </Button>
            </div>
 
-           {/* 🌟 MOBILE ONLY ROW: Upscaled ~3x (w-24 h-24), using duration-900 to match your theme */}
+           
            <div className="flex md:hidden justify-center items-center gap-8 mt-16 pt-8 border-t border-border/50 relative z-30">
               <a href="https://www.instagram.com/asktrust/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group">
                 <div className="p-6 rounded-full bg-background border-2 shadow-md group-hover:bg-gradient-to-tr group-hover:from-[#f09433] group-hover:via-[#e6683c] group-hover:to-[#bc1888] group-hover:text-white transition-all duration-900 active:scale-95">

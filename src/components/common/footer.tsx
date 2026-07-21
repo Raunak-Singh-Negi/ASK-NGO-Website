@@ -55,7 +55,7 @@ export function Footer() {
           <div>
             <h3 className="font-headline text-2xl font-extrabold text-[#222222] animate-divine-pulse text-left mb-4">Contact Us</h3>
           <ul className="space-y-3 text-muted-foreground">
-  {/* 🌟 Address Line */}
+  {/*  Address Line */}
   <li className="flex items-start gap-3 transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)] cursor-pointer group">
     <MapPin className="h-5 w-5 text-primary shrink-0 transition-colors duration-300 group-hover:text-[hsl(20,85%,49%)]" />
     <span className="transition-colors duration-300 group-hover:text-foreground">
@@ -63,7 +63,7 @@ export function Footer() {
     </span>
   </li>
 
-  {/* 🌟 Email Line */}
+  {/*  Email Line */}
   <li className="flex items-center gap-3 transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)] cursor-pointer group">
     <Mail className="h-5 w-5 text-primary shrink-0 transition-colors duration-300 group-hover:text-[hsl(20,85%,49%)]" />
     <a href="mailto:asktrust.in@gmail.com" className="transition-colors duration-300 group-hover:text-foreground">
@@ -71,7 +71,7 @@ export function Footer() {
     </a>
   </li>
 
-  {/* 🌟 Phone Line */}
+  {/*  Phone Line */}
   <li className="flex items-center gap-3 transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)] cursor-pointer group">
     <Phone className="h-5 w-5 text-primary shrink-0 transition-colors duration-300 group-hover:text-[hsl(20,85%,49%)]" />
     <a href="tel:+917017075603" className="transition-colors duration-300 group-hover:text-foreground">

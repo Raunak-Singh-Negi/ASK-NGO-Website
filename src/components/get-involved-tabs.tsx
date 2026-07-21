@@ -22,7 +22,7 @@ export function GetInvolvedTabs() {
     return (
         <Tabs defaultValue={defaultTab} className="w-full">
             
-            {/* 🌟 REDESIGNED TABS: Black to Orange transition effect */}
+          
             <TabsList className="grid w-full grid-cols-3 gap-2 bg-transparent h-auto p-0">
               <TabsTrigger 
                 value="donate" 
@@ -47,7 +47,7 @@ export function GetInvolvedTabs() {
             <TabsContent value="donate" className="mt-8">
               <Card>
                 <CardHeader>
-                  {/* 🌟 ADDED: Divine pulse effect & bold charcoal styling */}
+                
                   <CardTitle className="font-headline text-2xl font-extrabold text-[#222222] animate-divine-pulse flex items-center gap-3">
                     <HeartHandshake className="h-6 w-6 text-accent shrink-0" />
                     Support Our Cause with a Donation
@@ -59,7 +59,7 @@ export function GetInvolvedTabs() {
                 <CardContent>
                   <h3 className="font-semibold text-lg mb-4">Bank Transfer Details:</h3>
                   <div className="space-y-3 text-muted-foreground p-6 border border-primary/10 rounded-xl bg-secondary/30 shadow-sm">
-                    {/* 🌟 ADDED: Mapped bank details with the glowing orange hover effect */}
+                  
                     {bankDetails.map((item, index) => (
                       <div 
                         key={index} 
@@ -84,7 +84,7 @@ export function GetInvolvedTabs() {
             <TabsContent value="volunteer" className="mt-8">
               <Card>
                 <CardHeader>
-                  {/* 🌟 ADDED: Divine pulse effect & bold charcoal styling */}
+                  
                   <CardTitle className="font-headline text-2xl font-extrabold text-[#222222] animate-divine-pulse flex items-center gap-3">
                     <Users className="h-6 w-6 text-accent shrink-0" />
                     Become a Volunteer
@@ -94,7 +94,7 @@ export function GetInvolvedTabs() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  {/* 🌟 ADDED: Black to Orange slide-fill button effect */}
+           
                   <Button asChild className="w-full h-12 relative overflow-hidden font-bold border-2 border-[#111111] text-[hsl(20,85%,49%)] bg-[#111111] transition-colors duration-300 before:absolute before:inset-0 before:-translate-x-full before:bg-[hsl(20,85%,49%)] before:transition-transform before:duration-300 hover:text-[#111111] hover:before:translate-x-0 before:z-[-1] z-10 rounded-md">
                     <Link href="https://docs.google.com/forms/d/e/1FAIpQLSf9hh4zV2XGV2Y1L7l2O5MLucf6bWU-ZA_nabPN8mOHu0WVrg/viewform?usp=preview" target="_blank">
                       Register on Google Forms
@@ -108,7 +108,7 @@ export function GetInvolvedTabs() {
              <TabsContent value="partner" className="mt-8">
                <Card>
                 <CardHeader>
-                  {/* 🌟 ADDED: Divine pulse effect & bold charcoal styling */}
+                 
                   <CardTitle className="font-headline text-2xl font-extrabold text-[#222222] animate-divine-pulse flex items-center gap-3">
                     <Handshake className="h-6 w-6 text-accent shrink-0" />
                     Partner With Us
@@ -122,7 +122,7 @@ export function GetInvolvedTabs() {
                     Whether you are a corporation, a foundation, another NGO, or a government body, we are open to partnerships that align with our mission. We can collaborate on:
                   </p>
                   
-                  {/* Styled list for better UI spacing */}
+        
                  
 <ul className="space-y-3 p-4 border border-primary/10 rounded-xl bg-secondary/30">
   {[
@@ -146,12 +146,12 @@ export function GetInvolvedTabs() {
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                     {/* 🌟 ADDED: INVERTED Orange to Black slide-fill button effect */}
+                   
                      <Button asChild className="w-full sm:w-auto h-12 relative overflow-hidden font-bold border-2 border-[hsl(20,85%,49%)] text-[#111111] bg-[hsl(20,85%,49%)] transition-colors duration-300 before:absolute before:inset-0 before:-translate-x-full before:bg-[#111111] before:transition-transform before:duration-300 hover:text-[hsl(20,85%,49%)] hover:before:translate-x-0 before:z-[-1] z-10 rounded-md">
                         <a href="mailto:asktrust.in@gmail.com"><Mail className="mr-2 h-4 w-4" /> Email Us</a>
                      </Button>
 
-                     {/* 🌟 ADDED: INVERTED Orange to Black slide-fill button effect */}
+                     
                      <Button asChild className="w-full sm:w-auto h-12 relative overflow-hidden font-bold border-2 border-[hsl(20,85%,49%)] text-[#111111] bg-[hsl(20,85%,49%)] transition-colors duration-300 before:absolute before:inset-0 before:-translate-x-full before:bg-[#111111] before:transition-transform before:duration-300 hover:text-[hsl(20,85%,49%)] hover:before:translate-x-0 before:z-[-1] z-10 rounded-md">
                         <a href="tel:+917017075603"><Phone className="mr-2 h-4 w-4" /> Call Us</a>
                      </Button>

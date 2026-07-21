@@ -101,7 +101,7 @@ export default {
           '0%': { opacity: '0', color: 'hsl(var(--muted-foreground))' },
           '100%': { opacity: '1', color: 'hsl(var(--foreground))' },
         },
-        // 🎯 ADD THIS: Clean Fade Blueprint
+       
         pureFadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },

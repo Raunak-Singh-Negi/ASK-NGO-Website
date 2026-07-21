@@ -1,4 +1,4 @@
-"use client"; // 🌟 ADDED: Required for useEffect and useState hooks
+"use client"; // Required for useEffect and useState hooks
 
 import { useEffect, useState } from "react"; // 🌟 ADDED: React hooks
 import Image from "next/image"; // 🌟 ADDED: Required for the highly optimized marquee images
@@ -13,7 +13,7 @@ import { CheckCircle2, Group, HandHeart, Users } from "lucide-react";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-// 🌟 NOTE: Next.js does not allow metadata in "use client" files. 
+
 // If you need this SEO data, move this exact block into a `layout.tsx` file in this same directory.
 /*
 import type { Metadata } from "next";
@@ -99,7 +99,7 @@ const initiativePrograms = [
 
 ];
 
-// 🌟 ADDED: Image arrays for the 3-Tier Marquee. Add your real file names here!
+//  Image arrays for the 3-Tier Marquee.
 const row1 = [
   { src: `${basePath}/images/programs-gallery/ASKGALa1.jpeg` },
  { src: `${basePath}/images/programs-gallery/ASKGALa2.jpeg` },
@@ -227,25 +227,25 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      {/* 🌟 NEW: 3-Tier Multi-Directional Marquee Gallery */}
+      {/* 3-Tier Multi-Directional Marquee Gallery */}
       <section className={`flex flex-col gap-4 overflow-hidden py-10 bg-secondary/30 border-y border-primary/10 transition-opacity duration-700 ${isReady ? 'opacity-100' : 'opacity-0'}`}>
         
         {/* ROW 1: Moves Left */}
         <div className="flex relative w-full overflow-hidden">
           <div className="flex animate-marquee-row1 whitespace-nowrap gap-4">
             {row1.concat(row1).map((img, i) => (
-              <div key={`row1-${i}`} className="w-48 h-32 md:w-[282px] md:h-[188px] relative flex-shrink-0 rounded-lg overflow-hidden shadow-md">
+              <div key={`row1-${i}`} className="w-[210px] h-[140px] md:w-[282px] md:h-[188px] relative flex-shrink-0 rounded-lg overflow-hidden shadow-md">
                 <Image src={img.src} alt="NGO Program Event" fill className="object-cover" sizes="(max-width: 768px) 256px, 320px" />
               </div>
             ))}
           </div>
         </div>
 
-        {/* ROW 2: Moves Right (Opposite Direction) */}
+        {/* ROW 2: Moves Right */}
         <div className="flex relative w-full overflow-hidden">
           <div className="flex animate-marquee-row2 whitespace-nowrap gap-4">
             {row2.concat(row2).map((img, i) => (
-              <div key={`row2-${i}`} className="w-48 h-32 md:w-[282px] md:h-[188px] relative flex-shrink-0 rounded-lg overflow-hidden shadow-md">
+              <div key={`row2-${i}`} className="w-[210px] h-[140px] md:w-[282px] md:h-[188px] relative flex-shrink-0 rounded-lg overflow-hidden shadow-md">
                 <Image src={img.src} alt="NGO Program Event" fill className="object-cover" sizes="(max-width: 768px) 256px, 320px" />
               </div>
             ))}
@@ -256,7 +256,7 @@ export default function ProgramsPage() {
         <div className="flex relative w-full overflow-hidden">
           <div className="flex animate-marquee-row3 whitespace-nowrap gap-4">
             {row3.concat(row3).map((img, i) => (
-              <div key={`row3-${i}`} className="w-48 h-32 md:w-[282px] md:h-[188px] relative flex-shrink-0 rounded-lg overflow-hidden shadow-md">
+              <div key={`row3-${i}`} className="w-[210px] h-[140px] md:w-[282px] md:h-[188px] relative flex-shrink-0 rounded-lg overflow-hidden shadow-md">
                 <Image src={img.src} alt="NGO Program Event" fill className="object-cover" sizes="(max-width: 768px) 256px, 320px" />
               </div>
             ))}

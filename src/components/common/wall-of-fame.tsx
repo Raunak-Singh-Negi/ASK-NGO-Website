@@ -1,12 +1,12 @@
-// 🎯 1. Add this at the absolute top. It tells Next.js this component uses interactive state.
+
 "use client";
 
 import Image from "next/image";
-import { useState } from "react"; // 🎯 2. Import the state hook
+import { useState } from "react"; 
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-// ⚠️ PASTE YOUR ENTIRE 20-ITEM achievements ARRAY HERE!
+
 const achievements = [
   { id: "cert-1", src: `${basePath}/images/fame/certificate_1ask.png`, alt: "ASK Certificate 1" },
   { id: "cert-2", src: `${basePath}/images/fame/certificate_2ask.png`, alt: "ASK Certificate 2" },
@@ -40,14 +40,14 @@ const achievements = [
 ];
 
 export function WallOfFame() {
-  // 🎯 3. This tracks which image is currently clicked. If null, no image is maximized.
+  // This tracks which image is currently clicked.
   const [selectedImage, setSelectedImage] = useState<{src: string, alt: string} | null>(null);
 
   return (
     <>
       <section className="w-full py-12 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 mb-10 text-center">
-          {/* 🌟 The Forever Flame Headline */}
+         
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#e65c00] via-[#F9D423] to-[#FF4E50] bg-clip-text text-transparent animate-text-flame pb-2 tracking-tight">
             Our Wall of Fame
           </h2>
@@ -85,7 +85,7 @@ export function WallOfFame() {
         </div>
       </section>
 
-      {/* 🎯 4. The Maximized Lightbox Modal */}
+      {/* The Maximized Lightbox Modal */}
       {selectedImage && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
           

@@ -13,12 +13,10 @@ export default function ContactPage() {
       <section className="bg-[hsl(20,85%,65%)] py-12">
         <div className="container mx-auto px-4 text-center">
           
-          {/* 🌟 Isolated heading shimmer added here */}
           <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-slide-up">
            Contact Us
           </h1>
           
-          {/* 🌟 Staggered pure fade-in added here */}
           <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-reveal  [animation-delay:420ms]">
              We'd love to hear from you. Whether you have a question, a suggestion, or want to partner with us, get in touch.
           </p>
@@ -31,7 +29,7 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         <Card>
                             <CardHeader>
-                                {/* 🌟 ADDED: Divine pulse effect and charcoal styling to CardTitle */}
+                               
                                 <CardTitle className="font-headline text-2xl font-extrabold text-[#222222] animate-divine-pulse">
                                     Our Contact Information
                                 </CardTitle>
@@ -43,7 +41,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-lg">Address</h3>
-                                        {/* 🌟 ADDED: Glowing orange light hover effect specifically to the address text */}
+                                      
                                         <p className="text-muted-foreground transition-all duration-300 hover:text-[hsl(20,85%,49%)] hover:drop-shadow-[0_0_8px_rgba(234,88,12,0.8)] cursor-pointer">
                                             {address}
                                         </p>
@@ -72,7 +70,7 @@ export default function ContactPage() {
                         
                         <Card className="flex flex-col">
                             <CardHeader>
-                                {/* 🌟 ADDED: Divine pulse effect and charcoal styling to CardTitle */}
+                             
                                 <CardTitle className="font-headline text-2xl font-extrabold text-[#222222] animate-divine-pulse">
                                     Find Us on the Map
                                 </CardTitle>

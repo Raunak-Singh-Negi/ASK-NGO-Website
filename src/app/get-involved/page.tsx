@@ -7,16 +7,14 @@ export default function GetInvolvedPage() {
   return (
     <>
   
-{/* 🌟 Old div animation wrapper stripped and replaced with a clean Fragment */}
       <section className="bg-[hsl(20,85%,65%)] py-12">
         <div className="container mx-auto px-4 text-center">
           
-          {/* 🌟 Isolated heading shimmer added here */}
+         
           <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-slide-up">
             Get Involved
           </h1>
           
-          {/* 🌟 Staggered pure fade-in added here */}
           <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-reveal  [animation-delay:420ms]">
          Your support is crucial to our mission. Discover the different ways you can contribute and make a real impact.
           </p>

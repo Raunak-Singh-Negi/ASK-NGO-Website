@@ -7,8 +7,7 @@ const legalInfo = [
         details: [
             { label: "Registered under", value: "Indian Trusts Act, 1882" },
             { label: "Registration Number", value: "IV-040300188" },
-            { label: "Date of Registration", value: "August 24, 2021" },
-            { label: "Date of 12A Registration", value: "16-04-2022" },
+            { label: "Date of Registration", value: "December 13, 2018" },
         ],
     },
     {
@@ -23,16 +22,7 @@ const legalInfo = [
             { label: "PAN Number", value: "AAHTA4244R" },
         ],
     },
-    {
-        title: "Tax Exemption Approvals",
-        details: [
-            { label: "Section 80G Approval", value: "Provisionally approved" },
-            { label: "80G URN", value: "AAHTA4244RF20221" },
-            { label: "Date of 80G Approval", value: "16-04-2022" },
-            { label: "Validity", value: "Approved for Assessment Years 2023-24 to 2025-26" },
-            { label: "Details", value: "Donations are eligible for tax deduction under section 80G of the Income Tax Act." },
-        ],
-    },
+
     {
         title: "CSR Compliance",
         details: [
@@ -46,16 +36,15 @@ const legalInfo = [
 export default function LegalPage() {
     return (
         <>
-        {/* 🌟 Old div animation wrapper stripped and replaced with a clean Fragment */}
+       
       <section className="bg-[hsl(20,85%,65%)] py-12">
         <div className="container mx-auto px-4 text-center">
           
-          {/* 🌟 Isolated heading shimmer added here */}
           <h1 className="font-headline text-4xl md:text-5xl font-bold opacity-0 animate-slide-up">
             Legal &amp; Tax Information
           </h1>
           
-          {/* 🌟 Staggered pure fade-in added here */}
+         
           <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground opacity-0 animate-reveal  [animation-delay:420ms]">
             We are committed to maintaining complete transparency in our operations. Here are our legal and tax credentials.
           </p>
@@ -69,7 +58,7 @@ export default function LegalPage() {
                         {legalInfo.map((section) => (
         <Card key={section.title}>
     <CardHeader>
-        {/* 🌟 ADDED: Charcoal styling and animate-divine-pulse directly to CardTitle */}
+      
         <CardTitle className="font-headline text-3xl font-extrabold text-[#222222] animate-divine-pulse flex items-center gap-3">
             <BadgeCheck className="h-6 w-6 text-accent shrink-0" />
             {section.title}

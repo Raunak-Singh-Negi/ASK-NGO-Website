@@ -4,19 +4,19 @@
 
 @layer base {
   :root {
-    /* 🎯 1. MAIN CANVAS: The deep logo orange (RGB equivalent: 212, 137, 60) */
+    /*  MAIN CANVAS: The deep logo orange ) */
     --background:  38 70% 96%;
-    /* 🎯 2. CANVAS TEXT: Bold, almost pure black for maximum contrast */
+    /*  TEXT */
     --foreground:100 20% 12%;
     
-    /* 🎯 3. PLACARDS/CARDS: Locked to pure white so they pop against the orange */
+    /* PLACARDS/CARDS */
     --card: 0 0% 100%;
     --card-foreground: 0 0% 5%;
     
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 5%;
     
-    /* The rest remains your standard NGO brand colors */
+    /* indirect css properties */
     --primary: 22 95% 55%;
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
@@ -42,7 +42,7 @@
   }
   
   .dark {
-    /* Kept exactly as you had it for dark mode support */
+    /* some other indirect properties*/
     --background: 150 20% 95%;
     --foreground: 0 0% 98%;
     --card: 20 10% 12%;
@@ -123,7 +123,7 @@
     clip-path: inset(0 100% 0 0);
   }
   100% {
-    opacity: 1; /* 🎯 FIX: Forces the opacity to full visible state */
+    opacity: 1; /* Forces the opacity to full */
     clip-path: inset(0 0 0 0);
   }
 }
@@ -133,7 +133,7 @@
   animation-duration: 0.8s;
   animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
   animation-fill-mode: forwards;
-  /* Notice we DO NOT declare animation-delay here, letting your Tailwind class handle it smoothly */
+  
 }
 @keyframes scale-pop {
   0% {
@@ -220,7 +220,7 @@
       0 0 14px rgba(174, 176, 93, 0.4), 
       0 0 20px rgba(203, 6, 6, 0.6), 
       0 0 30px rgba(246, 249, 35, 0.9);
-    transform: scale(1.01) skewX(-0.5deg); /* Subtle flame flicker tilt */
+    transform: scale(1.01) skewX(-0.5deg); /* Subtle flame flicker effect*/
   }
   40% {
     text-shadow: 
@@ -244,9 +244,9 @@
 }
 
 .animate-text-flame {
-  /* Accelerated to 0.5 seconds with a linear, multi-stage loop */
+  /* flame cycle time set to 1.7*/
   animation: text-flame 1.7s infinite linear;
-  display: inline-block; /* Crucial to allow the scale/skew transforms to work */
+  display: inline-block; /* Crucial */
 }
 @keyframes scroll-left {
   0% { transform: translateX(0); }
@@ -258,7 +258,6 @@
   100% { transform: translateX(0); }
 }
 
-/* 🏎️ ROW 1: Fast (Takes 30 seconds to loop) */
 .animate-marquee-row1 {
   animation: scroll-left 40s linear infinite;
   will-change: transform;
@@ -266,7 +265,6 @@
   transform: translateZ(0);
 }
 
-/* 🐢 ROW 2: Slow & Opposite (Takes 50 seconds to loop) */
 .animate-marquee-row2 {
   animation: scroll-right 50s linear infinite;
   will-change: transform;
@@ -274,7 +272,6 @@
   transform: translateZ(0);
 }
 
-/* 🚶 ROW 3: Medium (Takes 65 seconds to loop) */
 .animate-marquee-row3 {
   animation: scroll-left 65s linear infinite;
   will-change: transform;
@@ -282,7 +279,6 @@
   transform: translateZ(0);
 }
 
-/* 🌟 OPTION 1: Divine Pulse (Smooth, breathing golden halo) */
 @keyframes divine-pulse {
   0%, 100% {
     text-shadow: 0 0 8px rgba(255, 215, 0, 0.3), 0 0 16px rgba(255, 255, 255, 0.2);
@@ -295,7 +291,6 @@
   animation: divine-pulse 3s infinite ease-in-out;
 }
 
-/* 🌟 OPTION 2: Ethereal Shimmer (Faster, shimmering white-gold energy) */
 @keyframes ethereal-shimmer {
   0%, 100% {
     text-shadow: 0 0 6px rgba(255, 255, 255, 0.5), 0 0 12px rgba(255, 200, 0, 0.3);
@@ -311,7 +306,6 @@
   animation: ethereal-shimmer 4s infinite linear;
 }
 
-/* 🌟 OPTION 3: Holy Aura (Wide, slow, seamless blending into the background) */
 @keyframes holy-aura {
   0%, 100% {
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 240, 150, 0.2);

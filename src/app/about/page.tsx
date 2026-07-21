@@ -4,16 +4,15 @@ import { Eye, Goal, HeartHandshake } from "lucide-react";
 import Image from "next/image";
 
 export default function AboutPage() {
-  // 1. ADDED: Environment variable to handle the GitHub Pages pathing
+  // Environment variable to handle the GitHub Pages pathing
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-  // 2. MOVED: Array is now inside the function so it can read the basePath variable
   const leadershipMessages = [
     {
       name: "Rajveer Singh",
       role: "President & Founder",
       message: "With aims for the growth of our country, ASK trust was established for women empowerment, livelihood generation for the underprivileged, especially jail inmates and women self-help groups. We also work for the development of the youth. Our aim is not just teaching people but to empower them with the abilities to have access to all the basic necessities of life, enabling them to earn respect and dignity for themselves and their future. The backbone of ASK trust is its Team, Sponsors, Volunteers, and all supporters.",
-      // 3. UPDATED: Dynamic path applied to your local image
+      //  Dynamic path applied to local image
       imageUrl: `${basePath}/images/NGO_founder.jpeg`
     },
     {
@@ -41,7 +40,6 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              {/* Next.js automatically maps the root '/' to your public folder */}
               <Image 
                 src={`${basePath}/images/designed_by_raunak.png`}
                 alt="NGO team working" 
@@ -68,7 +66,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             
-            {/* 1. MISSION CARD */}
+          
             <Card className="bg-card text-card-foreground border transition-all duration-300 hover:bg-neutral-950 hover:text-white hover:scale-[1.03] hover:shadow-xl">
               <CardHeader>
                 <HeartHandshake className="h-10 w-10 mx-auto text-primary"/>
@@ -79,7 +77,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
              
-            {/* 2. VISION CARD */}
+            
             <Card className="bg-card text-card-foreground border transition-all duration-300 hover:bg-neutral-950 hover:text-white hover:scale-[1.03] hover:shadow-xl">
               <CardHeader>
                 <Eye className="h-10 w-10 mx-auto text-primary"/>
@@ -90,7 +88,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
              
-            {/* 3. GOALS CARD */}
+          
             <Card className="bg-card text-card-foreground border transition-all duration-300 hover:bg-neutral-950 hover:text-white hover:scale-[1.03] hover:shadow-xl">
               <CardHeader>
                 <Goal className="h-10 w-10 mx-auto text-primary"/>
